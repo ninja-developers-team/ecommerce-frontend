@@ -9,6 +9,8 @@ import {
   Route
 } from "react-router-dom";
 import Footer from './Component/Footer';
+import Login from './Login';
+import Profile from './Screens/Profile';
 
 class App extends React.Component {
 
@@ -20,12 +22,12 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/">
               {
-                this.props.auth0.isAuthenticated ? <Main /> : ' '
+                this.props.auth0.isAuthenticated ? <Main /> : <Login />
               }
 
             </Route>
             <Route exact path="/profile">
-              {/* profile component */}
+              <Profile />
             </Route>
             <Route exact path="/Cars">
               {/* car component */}

@@ -11,11 +11,11 @@ class Header extends React.Component {
             <Navbar collapseOnSelect expand="lg" variant="secondary">
                 <Navbar.Brand>Stop And Shop</Navbar.Brand>
                 <Navbar.Brand>
-                    <Image src={logo} rounded />
+                    <Image width="100px" height="100px" src={logo} rounded />
                 </Navbar.Brand>
-                {!this.props.auth0.isAuthenticated ?
-                    <LoginButton />
-                    : <>
+                {!this.props.auth0.isAuthenticated ? <LoginButton /> :
+                    <>
+
                         <LogoutButton />
                         <NavItem>
                             <Link to="" className="nav-link">Home</Link>{' '}
