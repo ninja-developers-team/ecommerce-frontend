@@ -2,6 +2,7 @@ import React from 'react';
 import Main from './Screens/Main'
 import Header from './Component/Header'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { withAuth0 } from '@auth0/auth0-react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,13 +13,16 @@ import Footer from './Component/Footer';
 class App extends React.Component {
 
   render() {
-    return ( //   /electronics /clothing2
+    return (
       <>
         <Router>
           <Header />
           <Switch>
             <Route exact path="/">
-              <Main />
+              {
+                this.props.auth0.isAuthenticated ? <Main /> : ' '
+              }
+
             </Route>
             <Route exact path="/profile">
               {/* profile component */}
@@ -46,4 +50,7 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withAuth0(App);
+
+
+
