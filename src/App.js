@@ -11,6 +11,12 @@ import {
 import Footer from './Component/Footer';
 import Login from './Login';
 import Profile from './Screens/Profile';
+import Jewelery from './Screens/Jewelery';
+import WomenClothing from './Screens/WomenClothing'
+import MenClothing from './Screens/MenClothing'
+import Games from './Screens/Games';
+import Electronics from './Screens/Electronics'
+
 
 class App extends React.Component {
 
@@ -29,20 +35,20 @@ class App extends React.Component {
             <Route exact path="/profile">
               <Profile />
             </Route>
-            <Route exact path="/Cars">
-              {/* car component */}
+            <Route exact path="/games">
+              <Games />
             </Route>
             <Route exact path="/clothing1">
-              {/* women clothing compnent */}
+              <WomenClothing />
             </Route>
             <Route exact path="/jewelery">
-              {/* jewelery component */}
+              <Jewelery />
             </Route>
             <Route exact path="/electronics">
-              {/* electronics */}
+              <Electronics />
             </Route>
             <Route exact path="/clothing2">
-              {/* men clothing */}
+              <MenClothing />
             </Route>
           </Switch>
           <Footer />
