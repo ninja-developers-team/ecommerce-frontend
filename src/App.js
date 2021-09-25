@@ -11,11 +11,11 @@ import {
 import Footer from './Component/Footer';
 import Login from './Login';
 import Profile from './Screens/Profile';
-import Jewelery from './Screens/Jewelery';
-import WomenClothing from './Screens/WomenClothing'
-import MenClothing from './Screens/MenClothing'
+import Jewelery from './Screens/Showproduct/Jewelery';
+import WomenClothing from './Screens/Showproduct/WomenClothing';
+import MenClothing from './Screens/Showproduct/MenClothing'
 import Games from './Screens/Games';
-import Electronics from './Screens/Electronics'
+import Electronics from './Screens/Showproduct/Electronics'
 
 
 class App extends React.Component {
