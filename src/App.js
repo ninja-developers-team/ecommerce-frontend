@@ -10,7 +10,7 @@ import Profile from "./Screens/Profile";
 import Jewelery from "./Screens/Showproduct/Jewelery";
 import WomenClothing from "./Screens/Showproduct/WomenClothing";
 import MenClothing from "./Screens/Showproduct/MenClothing";
-import Games from "./Screens/Games";
+import MainGames from "./Component/GameApiData";
 import Electronics from "./Screens/Showproduct/Electronics";
 import "./style.css";
 
@@ -27,8 +27,8 @@ class App extends React.Component {
 						<Route exact path="/profile">
 							<Profile />
 						</Route>
-						<Route exact path="/games">
-							<Games />
+						<Route exact path="/game">
+							<MainGames />
 						</Route>
 						<Route exact path="/clothing1">
 							<WomenClothing />
