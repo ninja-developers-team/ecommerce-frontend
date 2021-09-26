@@ -22,10 +22,8 @@ class WomanCard extends Component {
     );
     console.log(productData, "done");
   };
-
   render() {
     const { user } = this.props.auth0;
-
     return (
       <Col lg={3} md={4} sm={6} xs={12}>
         <Card style={{ width: "18rem" }}>
@@ -39,13 +37,12 @@ class WomanCard extends Component {
             <Card.Text>
               description: {this.props.womanItem.description}
             </Card.Text>
-
             <Card.Text>
               Rating: {this.props.womanItem.rating.rate} <BsFillStarFill />
             </Card.Text>
             <Button
               variant="primary"
-              // onClick={(e) => this.props.addFavouriteGame(obj)}
+            // onClick={(e) => this.props.addFavouriteGame(obj)}
             >
               Add to Cart
             </Button>
@@ -55,5 +52,4 @@ class WomanCard extends Component {
     );
   }
 }
-
 export default withAuth0(WomanCard);

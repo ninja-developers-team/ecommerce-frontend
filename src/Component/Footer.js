@@ -5,9 +5,7 @@ import { SiGmail } from "react-icons/si";
 import { AiFillGithub } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
 // import { IconName } from "react-icons/bs";
-
 // import { Navbar, NavItem, Image } from "react-bootstrap";
-
 class Footer extends React.Component {
 	render() {
 		return (
@@ -31,5 +29,4 @@ class Footer extends React.Component {
 		);
 	}
 }
-
 export default Footer;

@@ -2,13 +2,11 @@ import React, { Component } from "react";
 import WomanCard from "../card/WomanCard";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import axios from "axios";
-
 class WomenClothing extends Component {
   constructor(props) {
     super(props);
     this.state = {
       womanCollection: [],
-
       showModel: false,
     };
   }

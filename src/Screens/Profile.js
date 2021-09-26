@@ -1,7 +1,23 @@
 import React, { Component } from "react";
 import { withAuth0 } from "@auth0/auth0-react";
+import axios from 'axios'
+import ShopingCard from "./Component/ShopingCard";
 
+const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL
 export class Profile extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			cardList: [],
+		};
+	}
+	componentDidMount = async () => {
+		axios.get(`http://localhost:8181/getCart?email=sajamalkawi95@gmail.com`)
+			.then((res) => {
+				this.setState({ cardList: res.data });
+				console.log(res.data)
+			}, () => { console.log(this.state.cardList) })
+	};
 	render() {
 		const { user, isAuthenticated } = this.props.auth0;
 		return (
@@ -46,32 +62,14 @@ export class Profile extends Component {
 								</div>
 							</div>
 						</div>
-						<div class="card col">
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-									<h2 class="mb-0"> {user.given_name} Favorite List </h2>
-								</li>
-								<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-									<h6 class="mb-0">item 1</h6>
-									<span class="text-secondary">price</span>
-								</li>
-							</ul>
-						</div>
-						{/* must edeted after the data base data */}
-						<div class="card col">
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-									<h2 class="mb-0"> {user.given_name} Card List </h2>
-								</li>
-								<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-									<h6 class="mb-0">item 1</h6>
-									<span class="text-secondary">price 00.0</span>
-								</li>
-								<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-									<h6 class="mb-0"> Total</h6>
-									<span class="text-secondary">00.00</span>
-								</li>
-							</ul>
+						<div class="shopping-cart">
+							<div class="title">
+								Shopping Bag
+							</div>
+							{this.state.cardList.map(
+								item => <ShopingCard item={item} />
+							)
+							}
 						</div>
 					</div>
 				)}
@@ -79,5 +77,4 @@ export class Profile extends Component {
 		);
 	}
 }
-
 export default withAuth0(Profile);

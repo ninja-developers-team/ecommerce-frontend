@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Carousel, Image } from 'react-bootstrap'
 import { Link } from "react-router-dom";
-
 export class CrouselItem extends Component {
     render() {
         const items = this.props.jeweleryItem;
@@ -28,10 +27,8 @@ export class CrouselItem extends Component {
                     </Carousel>
                     <h5 className="col" style={{ textAlign: 'center', margin: '20px 0' }}> {this.props.category}  </h5>
                 </Link>
-
             </div >
         )
     }
 }
-
 export default CrouselItem

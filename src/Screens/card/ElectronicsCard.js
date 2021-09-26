@@ -6,7 +6,6 @@ import { AiFillFire } from "react-icons/ai";
 import { withAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 let REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
 class ElectronicsCard extends Component {
   addToCardHandler = async (user) => {
     const reqBody = {
@@ -23,10 +22,8 @@ class ElectronicsCard extends Component {
     );
     console.log(productData, "done");
   };
-
   render() {
     const { user } = this.props.auth0;
-
     return (
       <>
         <Col lg={3} md={4} sm={6} xs={12}>
@@ -43,12 +40,10 @@ class ElectronicsCard extends Component {
                 <BiDollar />
                 <AiFillFire style={{ color: "red", fontSize: "20px" }} />
               </Card.Text>
-
               <Card.Text>
                 Rating: {this.props.electronicsItem.rating.rate}{" "}
                 <BsFillStarFill />
               </Card.Text>
-
               <Button
                 variant="primary"
                 onClick={(e) => this.addToCardHandler(user)}
@@ -62,5 +57,4 @@ class ElectronicsCard extends Component {
     );
   }
 }
-
 export default withAuth0(ElectronicsCard);

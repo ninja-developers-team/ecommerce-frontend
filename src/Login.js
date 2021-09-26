@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import LoginButton from "./Component/LoginButton";
-
 class Login extends React.Component {
 	render() {
 		return (
@@ -20,5 +19,4 @@ class Login extends React.Component {
 		);
 	}
 }
-
 export default Login;
