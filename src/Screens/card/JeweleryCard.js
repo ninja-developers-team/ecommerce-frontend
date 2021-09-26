@@ -6,7 +6,6 @@ import { AiFillFire } from "react-icons/ai";
 import { withAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 let REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
 class JeweleryCard extends Component {
   addToCardHandler = async (user) => {
     const reqBody = {
@@ -40,7 +39,6 @@ class JeweleryCard extends Component {
   };
   render() {
     const { user } = this.props.auth0;
-
     return (
       <>
         <Col lg={3} md={4} sm={6} xs={12}>
@@ -57,7 +55,6 @@ class JeweleryCard extends Component {
                 <BiDollar />
                 <AiFillFire style={{ color: "red", fontSize: "20px" }} />
               </Card.Text>
-
               <Card.Text>
                 Rating: {this.props.jewelweyItem.rating.rate} <BsFillStarFill />
               </Card.Text>
@@ -74,5 +71,4 @@ class JeweleryCard extends Component {
     );
   }
 }
-
 export default withAuth0(JeweleryCard);

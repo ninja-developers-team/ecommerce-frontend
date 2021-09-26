@@ -18,7 +18,6 @@ class Header extends React.Component {
 				<Navbar.Brand>
 					<h1>Stop And Shop</h1>
 				</Navbar.Brand>
-
 				{!this.props.auth0.isAuthenticated ? (
 					<LoginButton />
 				) : (
@@ -29,7 +28,7 @@ class Header extends React.Component {
 								<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 								<Navbar.Collapse id="responsive-navbar-nav">
 									<Nav className="me-auto">
-										<Link href="" className="nav-link item">
+										<Link href="" to="/" className="nav-link item">
 											Home
 										</Link>
 										<Link className="nav-link item" to="/profile">
@@ -57,7 +56,7 @@ class Header extends React.Component {
 												</Link>
 											</NavDropdown.Item>
 											<NavDropdown.Item>
-												<Link className="nav-link inneritem" to="/game">
+												<Link className="nav-link inneritem" to="/games">
 													Games
 												</Link>
 											</NavDropdown.Item>

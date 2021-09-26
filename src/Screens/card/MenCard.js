@@ -22,10 +22,8 @@ class MenCard extends Component {
     );
     console.log(productData, "done");
   };
-
   render() {
     const { user } = this.props.auth0;
-
     return (
       <>
         <Col lg={3} md={4} sm={6} xs={12}>
@@ -42,13 +40,12 @@ class MenCard extends Component {
                 <BiDollar />
                 <AiFillFire style={{ color: "red", fontSize: "20px" }} />
               </Card.Text>
-
               <Card.Text>
                 Rating: {this.props.menItem.rating.rate} <BsFillStarFill />
               </Card.Text>
               <Button
                 variant="primary"
-                // onClick={(e) => this.props.addFavouriteGame(obj)}
+              // onClick={(e) => this.props.addFavouriteGame(obj)}
               >
                 Add to Cart
               </Button>
@@ -59,5 +56,4 @@ class MenCard extends Component {
     );
   }
 }
-
 export default withAuth0(MenCard);

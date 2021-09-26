@@ -13,7 +13,6 @@ import MenClothing from "./Screens/Showproduct/MenClothing";
 import Games from "./Screens/Games";
 import Electronics from "./Screens/Showproduct/Electronics";
 import "./style.css";
-
 class App extends React.Component {
 	render() {
 		return (
@@ -48,7 +47,5 @@ class App extends React.Component {
 			</>
 		);
 	}
-
 }
-
 export default withAuth0(App);

@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import JeweleryCard from "../card/JeweleryCard";
 import { Button, Card, Col, Row } from "react-bootstrap";
-
 import axios from "axios";
-
 class Jewelery extends Component {
   constructor(props) {
     super(props);
     this.state = {
       jeweleryList: [],
-
       showModel: false,
     };
   }
