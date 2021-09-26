@@ -2,13 +2,11 @@ import React, { Component } from "react";
 import MenCard from "../card/MenCard";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import axios from "axios";
-
 class MenClothing extends Component {
   constructor(props) {
     super(props);
     this.state = {
       menCollection: [],
-
       showModel: false,
     };
   }
@@ -50,7 +48,6 @@ class MenClothing extends Component {
             <option value="2">From the highest price to the lowest</option>
           </select>
         </form>
-
         <Row xs={1} md={3} className="g-4">
           {this.state.menCollection.map((menItem) => (
             <MenCard menItem={menItem} />

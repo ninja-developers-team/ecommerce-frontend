@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 export class Cars extends Component {
     render() {
         return (
@@ -9,5 +8,4 @@ export class Cars extends Component {
         )
     }
 }
-
 export default Cars

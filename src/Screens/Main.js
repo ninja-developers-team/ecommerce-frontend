@@ -2,11 +2,9 @@ import React, { Component } from "react";
 import { withAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import CarouselMain from "./Component/CarouselMain";
-
 export class Main extends Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			user: {},
 			jeweleryData: [],
@@ -19,7 +17,6 @@ export class Main extends Component {
 	checkUser = async (config) => {
 		const axiosResponse = await axios(config);
 		setTimeout(axiosResponse, 3000);
-
 		this.setState({
 			user: axiosResponse.data,
 		});
@@ -41,7 +38,6 @@ export class Main extends Component {
 				this.checkUser(config);
 			})
 			.catch((error) => console.log(error));
-
 		const jewelery = await axios.get(
 			"https://fakestoreapi.com/products/category/jewelery"
 		);
@@ -74,7 +70,6 @@ export class Main extends Component {
 			gamesData: games.data,
 		});
 	};
-
 	render() {
 		console.log(this.state.jeweleryData);
 		return (
@@ -112,5 +107,4 @@ export class Main extends Component {
 		);
 	}
 }
-
 export default withAuth0(Main);
