@@ -1,45 +1,66 @@
-import React, { useState } from 'react';
-import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core';
-import { AddShoppingCart } from '@material-ui/icons';
+import React, { Component } from "react";
+import { Card, Button, Col } from "react-bootstrap";
+import { BsFillStarFill } from "react-icons/bs";
+import { BiDollar } from "react-icons/bi";
+import { AiFillFire } from "react-icons/ai";
+import { withAuth0 } from "@auth0/auth0-react";
+import axios from "axios";
+let REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
-import useStyles from '../style';
-const ElectronicsCard = ({ electronicsItem }) => {
-  const classes = useStyles();
-  console.log(electronicsItem.description);
+class ElectronicsCard extends Component {
+  addToCardHandler = async (user) => {
+    const reqBody = {
+      userEmail: user.email,
+      imagePath: this.props.electronicsItem.image,
+      title: this.props.electronicsItem.title,
+      description: this.props.electronicsItem.description,
+      price: this.props.electronicsItem.price,
+      quantity: 5, ///from input
+    };
+    const productData = await axios.post(
+      `${REACT_APP_BACKEND_URL}/addtocard`,
+      reqBody
+    );
+    console.log(productData, "done");
+  };
 
-  const [like, increseLike] = useState(0);
+  render() {
+    const { user } = this.props.auth0;
 
-  return (
-    <Card className={classes.root}>
-      <CardMedia className={classes.media} image={electronicsItem.image} title={electronicsItem.title} />
-      <CardContent>
-        <div className={classes.cardContent}>
-          <Typography gutterBottom variant="h5" component="h2">
-            {electronicsItem.title}
-          </Typography>
-          <Typography gutterBottom variant="body2" component="h2">
-            ${electronicsItem.price}
-          </Typography>
-        </div>
-        <Typography  variant="body2" color="textSecondary" component="p" >
-              {electronicsItem.description}
-            </Typography>
-      </CardContent>
-      <CardActions disableSpacing className={classes.cardActions}>
-        <IconButton aria-label="Add to Cart" >
-          <AddShoppingCart />
-        </IconButton>
-      </CardActions>
-      <CardActions disableSpacing className={classes.cardActions}>
-        <IconButton onClick={() => increseLike(like + 1)} aria-label="Add to Cart" >
-        💝 {like}
-        </IconButton>
-      </CardActions>
-      <Typography gutterBottom variant="h5" component="h2">
-            {electronicsItem.rating.rate}
-          </Typography>
-    </Card>
-  );
-};
+    return (
+      <>
+        <Col lg={3} md={4} sm={6} xs={12}>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" src={this.props.electronicsItem.image} />
+            <Card.Body>
+              <Card.Title>{this.props.electronicsItem.title}</Card.Title>
+              <Card.Text>
+                Price: {this.props.electronicsItem.price}
+                <BiDollar />
+              </Card.Text>
+              <Card.Text>
+                description: {this.props.electronicsItem.description}
+                <BiDollar />
+                <AiFillFire style={{ color: "red", fontSize: "20px" }} />
+              </Card.Text>
 
-export default ElectronicsCard;
+              <Card.Text>
+                Rating: {this.props.electronicsItem.rating.rate}{" "}
+                <BsFillStarFill />
+              </Card.Text>
+
+              <Button
+                variant="primary"
+                onClick={(e) => this.addToCardHandler(user)}
+              >
+                Add to Cart
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </>
+    );
+  }
+}
+
+export default withAuth0(ElectronicsCard);

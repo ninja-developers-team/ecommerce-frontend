@@ -1,25 +1,19 @@
-import React from 'react';
-import Main from './Screens/Main'
-import Header from './Component/Header'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { withAuth0 } from '@auth0/auth0-react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import Footer from './Component/Footer';
-import Login from './Login';
-import Profile from './Screens/Profile';
-import Jewelery from './Screens/Showproduct/Jewelery';
-import WomenClothing from './Screens/Showproduct/WomenClothing';
-import MenClothing from './Screens/Showproduct/MenClothing'
-import Games from './Screens/Games';
-import Electronics from './Screens/Showproduct/Electronics'
-
+import React from "react";
+import Main from "./Screens/Main";
+import Header from "./Component/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { withAuth0 } from "@auth0/auth0-react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Footer from "./Component/Footer";
+import Login from "./Login";
+import Profile from "./Screens/Profile";
+import Jewelery from "./Screens/Showproduct/Jewelery";
+import WomenClothing from "./Screens/Showproduct/WomenClothing";
+import MenClothing from "./Screens/Showproduct/MenClothing";
+import Games from "./Screens/Games";
+import Electronics from "./Screens/Showproduct/Electronics";
 
 class App extends React.Component {
-
   render() {
     return (
       <>
@@ -27,10 +21,7 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path="/">
-              {
-                this.props.auth0.isAuthenticated ? <Main /> : <Login />
-              }
-
+              {this.props.auth0.isAuthenticated ? <Main /> : <Login />}
             </Route>
             <Route exact path="/profile">
               <Profile />
@@ -54,11 +45,8 @@ class App extends React.Component {
           <Footer />
         </Router>
       </>
-    )
+    );
   }
 }
 
 export default withAuth0(App);
-
-
-
