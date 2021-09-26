@@ -2,18 +2,18 @@ import React from 'react';
 import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core';
 import { AddShoppingCart } from '@material-ui/icons';
 
+
 import useStyles from './Styles';
+
 //Functional Component
-const Product = ({ product }) => {
+const Product = ({ product, addToCart }) => {
   const classes = useStyles();
   console.log(product.description);
 
-  
-
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} >
       <CardMedia className={classes.media} image={product.image} title={product.title} />
-      <CardContent>
+      <CardContent >
         <div className={classes.cardContent}>
           <Typography gutterBottom variant="h5" component="h2">
             {product.title}
@@ -27,9 +27,19 @@ const Product = ({ product }) => {
             </Typography>
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
+           <form>
+               <input type="hidden" value={product.title}/>
+               <input type="hidden" value={product.image}/>
+               <input type="hidden" value={product.price}/>
+               <input type="hidden" value={product.description}/>
+
+
+
+          </form>
         <IconButton aria-label="Add to Cart" >
-          <AddShoppingCart />
+          <AddShoppingCart onClick={e =>addToCart(product)} />
         </IconButton>
+        
       </CardActions>
     </Card>
   );
