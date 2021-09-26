@@ -1,0 +1,87 @@
+.app {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 300px;
+  height: 480px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 1px 10px 1px black;
+  overflow: hidden;
+  transition: 0.6s;
+  margin: 20px;
+}
+.card:hover {
+  transform: scale(1.2);
+}
+.upper-container {
+  background: linear-gradient(to left, #44629e, #61dafb);
+  transform: translateY(-70px);
+}
+.image-container img {
+  background: white;
+  width: 220px;
+  height: 200px;
+  border-radius: 50%;
+  padding: 5px;
+  transform: translate(20px, 80px);
+}
+img {
+  border: 1px solid #6c9ddd;
+  /* transform: translateY(-70px); */
+}
+.lower-container {
+  margin-top: 60px;
+  height: 300px;
+  background: white;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.lower-container h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+.lower-container h3 {
+  color: #2f2d2e;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.lower-container h4 {
+  color: #3592c7;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.lower-containerp {
+  margin: 1rem;
+  font-size: 0.9rem;
+  text-align: justify;
+  color: #2f2d2e;
+  font-family: sans-serif;
+}
+button {
+  margin: 1rem;
+  margin-top: 0;
+  color: #2f2d2e;
+  font: bold;
+  background-color: white;
+  border: 2px solid #8e00b9;
+  padding: 0.6rem;
+  border-radius: 6px;
+  transition-duration: 0.5s;
+  animation: ease-in-out;
+}
+button:hover {
+  background-image: linear-gradient(to left, #8e00b9, #34badf);
+  transform: scale(1.2);
+  border: none;
+  color: white;
+}
