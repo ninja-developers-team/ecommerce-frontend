@@ -97,7 +97,7 @@ export class Checkout extends Component {
                  <strong>${total}</strong>
                </li>
 
-               <li class="list-group-item d-flex justify-content-between lh-condensed">
+              {/* <li class="list-group-item d-flex justify-content-between lh-condensed">
                  <div>
                    <h6 class="my-0">Product name</h6>
                    <small class="text-muted">Brief description</small>
@@ -108,7 +108,7 @@ export class Checkout extends Component {
                <li class="list-group-item d-flex justify-content-between">
                  <span>Total (USD)</span>
                  <strong>$20</strong>
-               </li>
+               </li>*/}
              </ul>
              <form class="card p-2">
                <div class="input-group">
