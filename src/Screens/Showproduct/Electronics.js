@@ -7,18 +7,15 @@ class Electronics extends Component {
     super(props);
     this.state = {
       electronicsList: [],
-
       showModel: false,
     };
   }
-
   componentDidMount = () => {
     axios
       .get(`https://fakestoreapi.com/products/category/electronics`)
       .then((res) => {
         this.setState({ electronicsList: res.data });
       });
-    console.log(this.state.electronicsList, "axios");
   };
   selectedValue = (e) => {
     let value = Number(e.target.value);
