@@ -6,8 +6,8 @@ export class MainGames extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			url: process.env.REAC_APP_SERVER_URL,
-			gameApiData: [],
+			url: process.env.REACT_APP_BACKEND_URL,
+			gameApiData1: [],
 			showGameData: false,
 			showApiMessege: false,
 			messege: "",
@@ -15,19 +15,21 @@ export class MainGames extends Component {
 	}
 
 	componentDidMount = async () => {
-		axios.get(`http://localhost:8181/game`).then(
+		axios.get(`${this.state.url}/game`).then(
 			(res) => {
+				console.log(this.state.gameApiData1.data, 'from did amunt')
 				this.setState({
-					gameApiData: res.data,
+					gameApiData1: res.data,
 					showGameData: true,
 				});
-			}, () => { console.log(this.state.res.data) }
+				console.log(this.state.gameApiData1.data, 'from did amunt')
+			}, () => { console.log(this.state.gameApiData1.data) }
 		);
 	};
 
 	addFavouriteGame = async (object) => {
 		const postRequest = await axios.post(
-			`http://localhost:8181/game/favourite`,
+			`${this.state.url}/game/favourite`,
 			object
 		);
 		console.log(object);
@@ -44,7 +46,7 @@ export class MainGames extends Component {
 					{this.state.showApiMessege && <h3>{this.state.messege}</h3>}
 					{this.state.showGameData && (
 						<GameApiData
-							gameApiData={this.state.gameApiData}
+							gameApiData={this.state.gameApiData1}
 							addFavouriteGame={this.addFavouriteGame}
 						/>
 					)}

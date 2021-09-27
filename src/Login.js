@@ -6,7 +6,7 @@ class Login extends React.Component {
 		return (
 			<div className="main">
 				<Card>
-					<h1>Welcome To Our Store Shope and Shope</h1>
+					<h1>Welcome To Our Store Stop and Shope</h1>
 					<Card.Body>
 						<Card.Title>
 							<h2>Log In</h2>
