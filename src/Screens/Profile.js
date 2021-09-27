@@ -11,14 +11,20 @@ export class Profile extends Component {
 			cardList: [],
 		};
 	}
-	componentDidMount = async () => {
+	delFromCard = (itemId) => {
+		axios.delete(`${process.env.REACT_APP_BACKEND_URL}/delfromcard/${itemId}`).then(res => {
+			this.getCart()
+		}).catch(error => alert(error))
+	}
+	getCart = () => {
 		const { user } = this.props.auth0;
-
 		axios.get(`${REACT_APP_BACKEND_URL}/getCart?email=${user.email}`)
 			.then((res) => {
 				this.setState({ cardList: res.data });
-				console.log(res.data)
 			}, () => { console.log(this.state.cardList) })
+	}
+	componentDidMount = async () => {
+		this.getCart()
 	};
 	render() {
 		let total = 0;
@@ -73,7 +79,8 @@ export class Profile extends Component {
 							{this.state.cardList
 								.map(
 									item => {
-										return (total = total + Number(item.price), < ShopingCard item={item} />)
+										return (total = total + Number(item.price),
+											< ShopingCard item={item} delFromCard={this.delFromCard} />)
 									}
 								)
 							}
