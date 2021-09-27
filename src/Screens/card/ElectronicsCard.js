@@ -7,6 +7,12 @@ import { withAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 let REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 class ElectronicsCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isActive: false,
+    };
+  }
   addToCardHandler = async (user) => {
     const reqBody = {
       userEmail: user.email,
@@ -24,6 +30,24 @@ class ElectronicsCard extends Component {
   };
   render() {
     const { user } = this.props.auth0;
+    const handleToggle = async () => {
+      this.setState({ isActive: !this.state.isActive });
+
+      ///////////////// add to fav
+
+      const reqBody = {
+        userEmail: user.email,
+        imagePath: this.props.electronicsItem.image,
+        title: this.props.electronicsItem.title,
+        description: this.props.electronicsItem.description,
+        price: this.props.electronicsItem.price,
+      };
+      const Data = await axios.post(
+        `${REACT_APP_BACKEND_URL}/addtofav`,
+        reqBody
+      );
+      console.log(Data.data, "done");
+    }
     return (
       <>
         <Col lg={3} md={4} sm={6} xs={12}>
@@ -44,12 +68,18 @@ class ElectronicsCard extends Component {
                 Rating: {this.props.electronicsItem.rating.rate}{" "}
                 <BsFillStarFill />
               </Card.Text>
-              <Button
-                variant="primary"
-                onClick={(e) => this.addToCardHandler(user)}
-              >
-                Add to Cart
-              </Button>
+              <div className='row'>
+                <Button
+                  variant="primary"
+                  onClick={(e) => this.addToCardHandler(user)}
+                  className='col'
+                >
+                  Add to Cart
+                </Button>
+                <div class="buttons col" >
+                  <span className={this.state.isActive ? "like-btn  is-active" : "like-btn"} onClick={handleToggle} ></span>
+                </div>
+              </div>
             </Card.Body>
           </Card>
         </Col>

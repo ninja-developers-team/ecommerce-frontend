@@ -56,7 +56,7 @@ class Header extends React.Component {
 												</Link>
 											</NavDropdown.Item>
 											<NavDropdown.Item>
-												<Link className="nav-link inneritem" to="/games">
+												<Link className="nav-link inneritem" to="/game">
 													Games
 												</Link>
 											</NavDropdown.Item>

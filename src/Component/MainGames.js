@@ -15,12 +15,14 @@ export class MainGames extends Component {
 	}
 
 	componentDidMount = async () => {
-		const request = axios.get(`http://localhost:8181/game`).then();
-		this.setState({
-			gameApiData: request.data,
-			showGameData: true,
-		});
-		console.log(request);
+		axios.get(`http://localhost:8181/game`).then(
+			(res) => {
+				this.setState({
+					gameApiData: res.data,
+					showGameData: true,
+				});
+			}, () => { console.log(this.state.res.data) }
+		);
 	};
 
 	addFavouriteGame = async (object) => {
