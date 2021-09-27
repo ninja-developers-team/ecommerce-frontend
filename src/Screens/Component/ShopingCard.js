@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import './card.css'
 export class ShopingCard extends Component {
+
+
     render() {
+
         return (
 
             < div class="item" >
                 <div class="buttons">
-                    <span class="delete-btn"></span>
+                    <span class="delete-btn" onClick={() => { this.props.delFromCard(this.props.item._id) }}></span>
                 </div>
                 <div class="image">
                     <img src={this.props.item.imagePath} alt="" style={{ height: '70px' }} />
