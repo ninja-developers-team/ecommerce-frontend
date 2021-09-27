@@ -121,6 +121,11 @@ input:focus {
   color: #43484D;
   font-weight: 300;
 }
+
+.maincontainer{
+    margin-left:  20%;
+    margin-right: 20%;
+}
 @media (max-width: 800px) {
   .shopping-cart {
     width: 100%;

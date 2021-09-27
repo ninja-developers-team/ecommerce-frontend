@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import './card.css'
+import React, { Component } from 'react';
+import './card.css';
 export class ShopingCard extends Component {
     render() {
         return (
 
-            < div class="item" >
+            <div class="item">
                 <div class="buttons">
                     <span class="delete-btn"></span>
                 </div>
@@ -17,7 +17,6 @@ export class ShopingCard extends Component {
                 <div class="total-price">{this.props.item.price}</div>
                 <div class="total-price">{this.props.item.quantity}</div>
             </div>
-
         )
     }
 }

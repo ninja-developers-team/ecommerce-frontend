@@ -13,6 +13,7 @@ import MenClothing from "./Screens/Showproduct/MenClothing";
 import MainGames from "./Component/MainGames";
 import Electronics from "./Screens/Showproduct/Electronics";
 import "./style.css";
+import Checkout from "./Screens/Component/Checkout";
 class App extends React.Component {
 	render() {
 		return (
@@ -40,6 +41,9 @@ class App extends React.Component {
 						</Route>
 						<Route exact path="/clothing2">
 							<MenClothing />
+						</Route>
+                        <Route exact path="/Checkout">
+                               <Checkout/>
 						</Route>
 					</Switch>
 					<Footer />

@@ -206,7 +206,7 @@ export class Checkout extends Component {
                  </div>
                </div>
                <hr class="mb-4" />
-               <button class="btn btn-primary btn-lg btn-block" type="button">Continue to checkout</button>
+               <button  class="btn btn-primary btn-lg btn-block" type="button">Pay</button>
              </form>
            </div>
          </div>
