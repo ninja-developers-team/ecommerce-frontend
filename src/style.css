@@ -395,13 +395,23 @@ figure.snip1171 a:before {
 }
 
 /* style for cart and fave page*/
-
+@keyframes animate {
+	0% {
+		background-position: left;
+	}
+	50% {
+		background-position: right;
+	}
+	100% {
+		background-position: right;
+	}
+}
 .like-btn {
 	display: inline-block;
 	cursor: pointer;
 }
 .like-btn {
-	bottom: 15px;
+	bottom: 10px;
 	left: 15px;
 	background: url(https://designmodo.com/demo/shopping-cart/twitter-heart.png);
 	width: 60px;
@@ -493,4 +503,15 @@ form .form-control option {
 
 .col-profile .container .card {
 	border: 1px solid var(--color);
+}
+/* .buttons {
+	position: static;
+} */
+
+.delete-btn {
+	margin: 10px 40px;
+	width: 18px;
+	height: 17px;
+	background: url("https://designmodo.com/demo/shopping-cart/delete-icn.svg")
+		no-repeat center;
 }

@@ -5,17 +5,18 @@ import { BiDollar } from "react-icons/bi";
 import { AiFillFire } from "react-icons/ai";
 import { withAuth0 } from "@auth0/auth0-react";
 export class GameApiData extends Component {
-	// constructor(props) {
-	// 	super(props);
-	// 	this.state = {
-	// 		isActive: false,
-	// 	};
-	// }
+	constructor(props) {
+		super(props);
+		this.state = {
+			isActive: false,
+		};
+	}
 
 	render() {
 		// const { user } = this.props.auth0;
-		// const handleToggle = async () => {
-		// 	this.setState({ isActive: !this.state.isActive });
+		const handleToggle = async () => {
+			this.setState({ isActive: !this.state.isActive });
+		};
 		return this.props.gameApiData.map((obj, idx) => {
 			// const reqBody = {
 			// 	userEmail: user.email,
@@ -35,14 +36,14 @@ export class GameApiData extends Component {
 								<h6>{obj.title}</h6>
 								<p>
 									{obj.description}
-									{/* <div class="buttons col">
+									<div class="buttons col">
 										<span
 											className={
 												this.state.isActive ? "like-btn  is-active" : "like-btn"
 											}
 											onClick={handleToggle}
 										></span>
-									</div> */}
+									</div>
 								</p>
 								<a
 									href="#"
