@@ -26,31 +26,8 @@
 	border-top: 1px solid #e1e8ee;
 	border-bottom: 1px solid #e1e8ee;
 }
-.buttons {
-	position: static;
-}
-.delete-btn,
-
-.delete-btn {
-	margin: 10px 40px;
-	width: 18px;
-	height: 17px;
-	background: url("https://designmodo.com/demo/shopping-cart/delete-icn.svg")
-		no-repeat center;
-}
 
 
-@keyframes animate {
-	0% {
-		background-position: left;
-	}
-	50% {
-		background-position: right;
-	}
-	100% {
-		background-position: right;
-	}
-}
 .image {
 	margin-right: 50px;
 }
@@ -132,5 +109,4 @@ input:focus {
 	.buttons {
 		margin-right: 20px;
 	}
-}
-*/
+} */
