@@ -11,7 +11,22 @@ class JeweleryCard extends Component {
 		super(props);
 		this.state = {
 			isActive: false,
+			Q: 1
 		};
+	}
+	incrementQty = () => {
+		this.setState({
+			Q: this.state.Q + 1
+		})
+	}
+	decrementQty = () => {
+		this.state.Q > 0 ?
+			this.setState({
+				Q: this.state.Q - 1
+			}) :
+			this.setState({
+				Q: 0
+			})
 	}
 	addToCardHandler = async (user) => {
 		const reqBody = {
@@ -20,7 +35,7 @@ class JeweleryCard extends Component {
 			title: this.props.jewelweyItem.title,
 			description: this.props.jewelweyItem.description,
 			price: this.props.jewelweyItem.price,
-			quantity: 5, ///from input
+			quantity: this.state.Q,
 		};
 		const productData = await axios.post(
 			`${REACT_APP_BACKEND_URL}/addtocard`,
@@ -65,6 +80,16 @@ class JeweleryCard extends Component {
 									></span>
 								</div>
 							</p>
+							<div class="qty-block">
+								<div class="qty">
+									<input type="text" name="qty" maxlength="12" value={this.state.Q} title="" class="input-text" />
+									<div class="qty_inc_dec">
+										<i class="increment" onClick={() => this.incrementQty()}>+</i>
+										<i class="decrement" onClick={() => this.decrementQty()}>-</i>
+									</div>
+								</div>
+							</div>
+
 							<a href="#" onClick={(e) => this.addToCardHandler(user)}>
 								Add to Cart
 							</a>

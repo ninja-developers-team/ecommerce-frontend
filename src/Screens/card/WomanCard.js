@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import { Card, Button, Col } from "react-bootstrap";
-import { BsFillStarFill } from "react-icons/bs";
-import { BiDollar } from "react-icons/bi";
-import { AiFillFire } from "react-icons/ai";
 import { withAuth0 } from "@auth0/auth0-react";
+import { Col } from "react-bootstrap"
 import axios from "axios";
 let REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 class WomanCard extends Component {
@@ -11,7 +8,22 @@ class WomanCard extends Component {
 		super(props);
 		this.state = {
 			isActive: false,
+			Q: 1
 		};
+	}
+	incrementQty = () => {
+		this.setState({
+			Q: this.state.Q + 1
+		})
+	}
+	decrementQty = () => {
+		this.state.Q > 0 ?
+			this.setState({
+				Q: this.state.Q - 1
+			}) :
+			this.setState({
+				Q: 0
+			})
 	}
 	addToCardHandler = async (user) => {
 		const reqBody = {
@@ -20,7 +32,7 @@ class WomanCard extends Component {
 			title: this.props.womanItem.title,
 			description: this.props.womanItem.description,
 			price: this.props.womanItem.price,
-			quantity: 5, ///from input
+			quantity: this.state.Q, ///from input
 		};
 		const productData = await axios.post(
 			`${REACT_APP_BACKEND_URL}/addtocard`,
@@ -56,6 +68,15 @@ class WomanCard extends Component {
 					<figcaption>
 						<h6>{this.props.womanItem.title}</h6>
 						<p> {this.props.womanItem.description}</p>
+						<div class="qty-block">
+							<div class="qty">
+								<input type="text" name="qty" maxlength="12" value={this.state.Q} title="" class="input-text" />
+								<div class="qty_inc_dec">
+									<i class="increment" onClick={() => this.incrementQty()}>+</i>
+									<i class="decrement" onClick={() => this.decrementQty()}>-</i>
+								</div>
+							</div>
+						</div>
 						<a href="#" onClick={(e) => this.addToCardHandler(user)}>
 							Add to Cart
 						</a>
@@ -65,7 +86,9 @@ class WomanCard extends Component {
 									this.state.isActive ? "like-btn  is-active" : "like-btn"
 								}
 								onClick={handleToggle}
-							></span>
+							>
+
+							</span>
 						</div>
 					</figcaption>
 				</figure>

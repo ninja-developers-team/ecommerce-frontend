@@ -31,8 +31,11 @@ export class MainGames extends Component {
 	};
 
 	addFavouriteGame = async (object) => {
-		const postRequest = await axios.post(`${this.state.url}/addtocard`, object);
-		console.log(object);
+		const postRequest = await axios.post(
+			`${this.state.url}/addtocard`,
+			object
+		);
+		console.log(object, postRequest);
 		// this.setState({
 		// 	messege: postRequest.data,
 		// 	showApiMessege: true,
@@ -78,6 +81,9 @@ export class MainGames extends Component {
 						<GameApiData
 							gameApiData={this.state.gameApiData1}
 							addFavouriteGame={this.addFavouriteGame}
+							incrementQty={this.incrementQty}
+							Q={this.state.Q}
+							decrementQty={this.decrementQty}
 						/>
 					)}
 				</Row>
