@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import WomanCard from "../card/WomanCard";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import axios from "axios";
 class WomenClothing extends Component {
   constructor(props) {
@@ -12,14 +12,11 @@ class WomenClothing extends Component {
   }
   componentDidMount = async () => {
     const clothing1 = await axios.get(
-      `https://fakestoreapi.com/products/category/women's clothing`
+      `https://asac-ecommerce-api.herokuapp.com/woman `
     );
     this.setState({
-      womanCollection: clothing1.data,
+      womanCollection: clothing1.data.data.woman,
     });
-    console.log("hiiiiiiiii");
-    // axios.get(`https://fakestoreapi.com/products/category/women's clothing`).then(res=>{this.setState({womanCollection:res.data})})
-    // .catch(err=>{console.log(err ,'from axiosbfnbdnty')})
   };
   selectedValue = (e) => {
     let value = Number(e.target.value);
@@ -33,21 +30,56 @@ class WomenClothing extends Component {
         return this.state.womanCollection;
       }
     });
+
     this.setState({
       womanCollection: womanCollection,
     });
   };
+  selectType = (event) => {
+    let type = Number(event.target.value);
+    let womanCollection = this.state.womanCollection;
+
+    let regex1 = /[dres]/gi;
+    let newArr = [];
+    if (type === 1) {
+      console.log(this.state.womanCollection, "from45");
+      womanCollection.forEach((e) => {
+        if (regex1.test(e.title)) {
+          newArr.push(e);
+          console.log(e.title);
+        }
+        return newArr;
+      });
+    }
+    this.setState({
+      womanCollection: newArr,
+    });
+    console.log(newArr);
+  };
+
   render() {
     return (
       <div>
         <form>
-          <label for="selectBox">Sort by price</label>
+          {/* <label for="selectBox">Sort by price</label> */}
+          <select
+            class="form-control"
+            id="selectBox"
+            onClick={this.selectType}
+            placeholder="Filter Your Item"
+          >
+            <option value="">Filter Your Item </option>
+            <option value="1">Dressees</option>
+            <option value="2">Jacket</option>
+            <option value="3">Suit</option>
+          </select>
           <select
             class="form-control"
             id="selectBox"
             onClick={this.selectedValue}
+            placeholder="Filter Your Item"
           >
-            <option value="">select </option>
+            <option value="">Filter Your Item </option>
             <option value="1">from lowest to highest price</option>
             <option value="2">From the highest price to the lowest</option>
           </select>

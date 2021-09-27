@@ -15,11 +15,11 @@ export class MainGames extends Component {
   }
 
   componentDidMount = async () => {
-    axios.get(`${this.state.url}/game`).then(
+    axios.get(`https://asac-ecommerce-api.herokuapp.com/game`).then(
       (res) => {
         console.log(this.state.gameApiData1.data, "from did amunt");
         this.setState({
-          gameApiData1: res.data,
+          gameApiData1: res.data.data.game,
           showGameData: true,
         });
         console.log(this.state.gameApiData1.data, "from did amunt");
@@ -31,20 +31,42 @@ export class MainGames extends Component {
   };
 
   addFavouriteGame = async (object) => {
-    const postRequest = await axios.post(
-      `${this.state.url}/game/favourite`,
-      object
-    );
+    const postRequest = await axios.post(`${this.state.url}/addtocard`, object);
     console.log(object);
-    // this.setState({
-    // 	messege: postRequest.data,
-    // 	showApiMessege: true,
-    // });
+  };
+
+  selectedValue = (e) => {
+    let value = Number(e.target.value);
+    let gameApiData1 = this.state.gameApiData1;
+    this.state.gameApiData1.sort((a, b) => {
+      if (value === 2) {
+        return Number(b.price) - Number(a.price);
+      } else if (value === 1) {
+        return Number(a.price) - Number(b.price);
+      } else {
+        return this.state.womanCollection;
+      }
+    });
+    this.setState({
+      gameApiData1: gameApiData1,
+    });
   };
 
   render() {
     return (
       <>
+        <form>
+          <select
+            class="form-control"
+            id="selectBox"
+            onClick={this.selectedValue}
+            placeholder="Filter Your Item"
+          >
+            <option value="">Filter Your Item </option>
+            <option value="1">from lowest to highest price</option>
+            <option value="2">From the highest price to the lowest</option>
+          </select>
+        </form>
         <Row>
           {this.state.showApiMessege && <h3>{this.state.messege}</h3>}
           {this.state.showGameData && (

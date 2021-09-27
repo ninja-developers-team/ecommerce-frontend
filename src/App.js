@@ -14,6 +14,7 @@ import MenClothing from "./Screens/Showproduct/MenClothing";
 import MainGames from "./Component/MainGames";
 import Electronics from "./Screens/Showproduct/Electronics";
 import "./style.css";
+import AboutUs from "./Screens/AboutUs";
 class App extends React.Component {
   render() {
     return (
@@ -41,6 +42,9 @@ class App extends React.Component {
             </Route>
             <Route exact path="/clothing2">
               <MenClothing />
+            </Route>
+            <Route exact path="/about">
+              <AboutUs />
             </Route>
           </Switch>
           <Footer />

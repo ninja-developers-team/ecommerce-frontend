@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { Card, Button, Col } from "react-bootstrap";
-import { BsFillStarFill } from "react-icons/bs";
-import { BiDollar } from "react-icons/bi";
-import { AiFillFire } from "react-icons/ai";
+import { Col } from "react-bootstrap";
 import { withAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 let REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -20,7 +17,7 @@ class JeweleryCard extends Component {
       title: this.props.jewelweyItem.title,
       description: this.props.jewelweyItem.description,
       price: this.props.jewelweyItem.price,
-      quantity: 5, ///from input
+      quantity: 5,
     };
     const productData = await axios.post(
       `${REACT_APP_BACKEND_URL}/addtocard`,
@@ -45,40 +42,31 @@ class JeweleryCard extends Component {
         reqBody
       );
       console.log(Data.data, "done");
-    }
+    };
     return (
       <>
         <Col lg={3} md={4} sm={6} xs={12}>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={this.props.jewelweyItem.image} />
-            <Card.Body>
-              <Card.Title>{this.props.jewelweyItem.title}</Card.Title>
-              <Card.Text>
-                Price: {this.props.jewelweyItem.price}
-                <BiDollar />
-              </Card.Text>
-              <Card.Text>
-                description: {this.props.jewelweyItem.description}
-                <BiDollar />
-                <AiFillFire style={{ color: "red", fontSize: "20px" }} />
-              </Card.Text>
-              <Card.Text>
-                Rating: {this.props.jewelweyItem.rating.rate} <BsFillStarFill />
-              </Card.Text>
-              <div className='row'>
-                <Button
-                  variant="primary"
-                  onClick={(e) => this.addToCardHandler(user)}
-                  className='col'
-                >
-                  Add to Cart
-                </Button>
-                <div class="buttons col" >
-                  <span className={this.state.isActive ? "like-btn  is-active" : "like-btn"} onClick={handleToggle} ></span>
+          <figure class="snip1171">
+            <img src={this.props.jewelweyItem.image} alt="sample71" />
+            <div class="price">{this.props.jewelweyItem.price}</div>
+            <figcaption>
+              <h6>{this.props.jewelweyItem.title.replace(/[0-9]/g, "")}</h6>
+              <p>
+                {this.props.jewelweyItem.description}
+                <div class="buttons col">
+                  <span
+                    className={
+                      this.state.isActive ? "like-btn  is-active" : "like-btn"
+                    }
+                    onClick={handleToggle}
+                  ></span>
                 </div>
-              </div>
-            </Card.Body>
-          </Card>
+              </p>
+              <a href="#" onClick={(e) => this.addToCardHandler(user)}>
+                Add to Cart
+              </a>
+            </figcaption>
+          </figure>
         </Col>
       </>
     );

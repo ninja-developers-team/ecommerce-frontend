@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ElectronicsCard from "../card/ElectronicsCard";
 import axios from "axios";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 class Electronics extends Component {
   constructor(props) {
     super(props);
@@ -12,10 +12,11 @@ class Electronics extends Component {
   }
   componentDidMount = () => {
     axios
-      .get(`https://fakestoreapi.com/products/category/electronics`)
+      .get(`https://asac-ecommerce-api.herokuapp.com/children`)
       .then((res) => {
-        this.setState({ electronicsList: res.data });
+        this.setState({ electronicsList: res.data.data.children });
       });
+    console.log(this.state.electronicsList, "from kjj");
   };
   selectedValue = (e) => {
     let value = Number(e.target.value);
@@ -37,13 +38,14 @@ class Electronics extends Component {
     return (
       <div>
         <form>
-          <label for="selectBox">Sort by price</label>
+          {/* <label for="selectBox">Sort by price</label> */}
           <select
             class="form-control"
             id="selectBox"
             onClick={this.selectedValue}
+            placeholder="Filter Your Item"
           >
-            <option value="">select </option>
+            <option value="">Filter Your Item</option>
             <option value="1">from lowest to highest price</option>
             <option value="2">From the highest price to the lowest</option>
           </select>

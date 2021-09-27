@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import ShopingCard from "./Component/ShopingCard";
+import { Col, Row } from "react-bootstrap";
 
 const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 export class Profile extends Component {
@@ -39,57 +40,73 @@ export class Profile extends Component {
     return (
       <>
         {isAuthenticated && (
-          <div className="profileCOntainer row">
-            <div class=" container d-flex justify-content-lift align-items-center col-3">
-              <div class="card">
-                <div class="upper">
-                  {" "}
-                  <img
-                    src="https://i.imgur.com/Qtrsrk5.jpg"
-                    className="img-fluid"
-                    alt="..."
-                  />{" "}
-                </div>
-                <div class="user text-center">
-                  <div class="profile">
+          <Row className="profileCOntainer row">
+            <Col className="col-profile">
+              <div class=" container d-flex justify-content-lift align-items-center col-3">
+                <div class="card">
+                  <div class="upper">
                     {" "}
                     <img
-                      src={user.picture}
-                      alt={user.name}
-                      className="rounded-circle"
-                      width="100"
+                      src="https://i.imgur.com/Qtrsrk5.jpg"
+                      className="img-fluid"
+                      alt="..."
                     />{" "}
                   </div>
-                </div>
-                <div class="mt-5 text-center">
-                  <h4 class="mb-0">{user.name}</h4>
-                  <div className="row ">
-                    <b class="col"> Email</b>{" "}
-                    <span class="col text-muted d-block mb-2">
-                      {user.email}
-                    </span>
+                  <div class="user text-center">
+                    <div class="profile">
+                      {" "}
+                      <img
+                        src={user.picture}
+                        alt={user.name}
+                        className="rounded-circle"
+                        width="100"
+                      />{" "}
+                    </div>
                   </div>
-                  <div className="row">
-                    <b class="col"> username</b>{" "}
-                    <span class="col text-muted d-block mb-2">
-                      @{user.nickname}
-                    </span>
+                  <div class="mt-5 text-center">
+                    <h4 class="mb-0">{user.name}</h4>
+                    <div className="row ">
+                      <b class="col"> Email</b>{" "}
+                      <span class="col text-muted d-block mb-2">
+                        {user.email}
+                      </span>
+                    </div>
+                    <div className="row">
+                      <b class="col"> username</b>{" "}
+                      <span class="col text-muted d-block mb-2">
+                        @{user.nickname}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Col>
 
-            <div class="shopping-cart col-3">
-              <div class="title">Shopping Bag</div>
-              {this.state.cardList.map((item) => {
-                return (
-                  (total = total + Number(item.price)),
-                  (<ShopingCard item={item} delFromCard={this.delFromCard} />)
-                );
-              })}
-              <div class="total-price"> Total : ${total}</div>
-            </div>
-          </div>
+            <Col className="col-profile">
+              <div class="shopping-cart col-3">
+                <div class="title">
+                  <h2>Shopping Bag</h2>
+                </div>
+                <div class="overflow">
+                  {this.state.cardList.map((item) => {
+                    return (
+                      (total = total + Number(item.price)),
+                      (
+                        <ShopingCard
+                          item={item}
+                          delFromCard={this.delFromCard}
+                        />
+                      )
+                    );
+                  })}
+                </div>
+                <div class="total-price">
+                  {" "}
+                  <h3>Total: {total}$</h3>
+                </div>
+              </div>
+            </Col>
+          </Row>
         )}
       </>
     );
