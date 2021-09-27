@@ -39,35 +39,35 @@ export class Main extends Component {
 			})
 			.catch((error) => console.log(error));
 		const jewelery = await axios.get(
-			"https://fakestoreapi.com/products/category/jewelery"
+			"https://asac-ecommerce-api.herokuapp.com/jewelery"
 		);
 		this.setState({
-			jeweleryData: jewelery.data,
+			jeweleryData: jewelery.data.data.jewelery,
 		});
 		const clothing2 = await axios.get(
-			`https://fakestoreapi.com/products/category/men's clothing`
+			`https://asac-ecommerce-api.herokuapp.com/man`
 		);
 		this.setState({
-			clothing2Data: clothing2.data,
+			clothing2Data: clothing2.data.data.man,
 		});
 		//electronics
 		const electronics = await axios.get(
-			`https://fakestoreapi.com/products/category/electronics`
+			`https://asac-ecommerce-api.herokuapp.com/children`
 		);
 		this.setState({
-			electronicsData: electronics.data,
+			electronicsData: electronics.data.data.children,
 		});
 		const clothing1 = await axios.get(
-			`https://fakestoreapi.com/products/category/women's clothing`
+			`https://asac-ecommerce-api.herokuapp.com/woman`
 		);
 		this.setState({
-			clothing1Data: clothing1.data,
+			clothing1Data: clothing1.data.data.woman,
 		});
 		const games = await axios.get(
-			`https://www.cheapshark.com/api/1.0/deals?storeID=2&lowerPrice=100`
+			`https://asac-ecommerce-api.herokuapp.com/game`
 		);
 		this.setState({
-			gamesData: games.data,
+			gamesData: games.data.data.game,
 		});
 	};
 	render() {
@@ -89,7 +89,7 @@ export class Main extends Component {
 						<CarouselMain
 							jeweleryData={this.state.electronicsData}
 							path="/electronics"
-							category="Electronics"
+							category="Children"
 						/>
 						<CarouselMain
 							jeweleryData={this.state.clothing1Data}
@@ -98,7 +98,7 @@ export class Main extends Component {
 						/>
 						<CarouselMain
 							jeweleryData={this.state.gamesData}
-							path="/games"
+							path="/game"
 							category="Games"
 						/>
 					</>

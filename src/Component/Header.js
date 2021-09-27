@@ -47,7 +47,7 @@ class Header extends React.Component {
 											</NavDropdown.Item>
 											<NavDropdown.Item>
 												<Link className="nav-link inneritem" to="/electronics">
-													Electroneics
+													children Clothings
 												</Link>
 											</NavDropdown.Item>
 											<NavDropdown.Item>
