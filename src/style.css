@@ -1,8 +1,10 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&family=Luckiest+Guy&family=Pacifico&display=swap");
 /* @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Pacifico&display=swap"); */
+body {
+	overflow-x: hidden;
+}
 :root {
-	--color: #3a9dca;
+	--color: #3f0713;
 }
 .footer {
 	background-color: var(--color);
@@ -11,6 +13,7 @@
 	justify-content: space-around;
 	padding: 15px;
 	align-items: center;
+	padding-bottom: 0;
 }
 .footer ul {
 	list-style: none;
@@ -163,12 +166,13 @@
 	border-bottom: 3px solid #fff;
 	transform: scale(1.2);
 }
+/*
 .card-game {
 	background-color: #fff;
 	margin-right: calc(var(--bs-gutter-x) * 3);
 	margin-left: calc(var(--bs-gutter-x) * 3);
-}
-.card-game .btn-primary {
+} */
+/* .card-game .btn-primary {
 	color: #fff;
 	background-color: var(--color);
 	border: none;
@@ -212,4 +216,281 @@
 	margin-bottom: 1rem;
 	border-bottom: 1px solid #ccc;
 	width: 73%;
+} */
+/*card */
+/* Included color classes.. 
+  .red 
+  .blue 
+  .orange
+*/
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+figure.snip1171 {
+	font-family: "Raleway", Arial, sans-serif;
+	position: relative;
+	overflow: hidden;
+	margin: 10px;
+	min-width: 220px;
+	max-width: 310px;
+	width: 100%;
+	background: var(--color);
+	color: #333;
+	text-align: left;
+	box-shadow: 0 0 5px var(--color);
+	transition: 0.6s ease-in-out;
+}
+figure.snip1171:hover {
+	transform: scale(0.9);
+}
+figure.snip1171 * {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+	transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+}
+figure.snip1171 img {
+	/* max-width: 100%; */
+	width: 300px;
+	height: 300px;
+	object-fit: cover;
+	vertical-align: top;
+}
+figure.snip1171 figcaption {
+	position: relative;
+	background-color: #ffffff;
+	padding: 20px 25px 50px;
+	height: 150px;
+}
+figure.snip1171 h6 {
+	position: absolute;
+	bottom: 100%;
+	text-transform: uppercase;
+	padding: 0px 25px;
+	line-height: 44px;
+	margin: 0;
+	left: 0;
+	font-weight: 400;
+	background-color: var(--color);
+	color: #ffffff;
+}
+figure.snip1171 h6 span {
+	font-weight: 800;
+}
+figure.snip1171 h6:before {
+	position: absolute;
+	left: 100%;
+	border-style: solid;
+	border-width: 44px 0 0 12px;
+	border-color: transparent transparent transparent var(--color);
+	content: "";
+	top: 0;
+}
+figure.snip1171 p {
+	font-size: 0.8em;
+	font-weight: 500;
+	text-align: left;
+	margin: 0;
+	line-height: 1.6em;
+}
+figure.snip1171 .price {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #ffffff;
+	background-color: var(--color);
+	padding: 0 10px;
+	line-height: 40px;
+	font-weight: 800;
+}
+figure.snip1171 .price:before {
+	position: absolute;
+	right: 100%;
+	border-style: solid;
+	border-width: 0 12px 40px 0;
+	border-color: transparent var(--color) transparent;
+	content: "";
+	top: 0;
+}
+figure.snip1171 a {
+	text-decoration: none;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: var(--color);
+	line-height: 40px;
+	padding: 0 10px;
+	color: #ffffff;
+	font-weight: 800;
+	font-size: 0.9em;
+	text-transform: uppercase;
+}
+figure.snip1171 a:before {
+	position: absolute;
+	right: 100%;
+	border-style: solid;
+	border-width: 0 0 40px 12px;
+	border-color: transparent transparent var(--color);
+	content: "";
+	top: 0;
+}
+/*scroll bar*/
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--color);
+	border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color);
+}
+
+/*edit size cards*/
+.col-lg-4 {
+	flex: 0 0 auto;
+	width: 30%;
+}
+
+.row {
+	justify-content: center;
+	padding: 30px;
+}
+.col-lg-3 {
+	flex: 0 0 auto;
+
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+	/* color: rgba(0,0,0,.9); */
+	color: #fff;
+}
+.title-carousel {
+	color: var(--color);
+}
+
+.dropdown-menu .dropdown-item .inneritem {
+	color: var(--color);
+}
+
+.col-lg-4 {
+	flex: 0 0 auto;
+	/* width: 30%; */
+	display: flex;
+	justify-content: center;
+}
+
+/* style for cart and fave page*/
+
+.like-btn {
+	display: inline-block;
+	cursor: pointer;
+}
+.like-btn {
+	bottom: 15px;
+	left: 15px;
+	background: url(https://designmodo.com/demo/shopping-cart/twitter-heart.png);
+	width: 60px;
+	height: 40px;
+	background-size: 2900%;
+	background-repeat: no-repeat;
+	position: absolute;
+	transition: 0.6s;
+}
+
+.like-btn:hover {
+	color: var(--color);
+}
+
+.is-active {
+	animation-name: animate;
+	animation-duration: 0.8s;
+	animation-iteration-count: 1;
+	animation-timing-function: steps(28);
+	animation-fill-mode: forwards;
+}
+
+form {
+	margin-left: 30px;
+	padding-top: 15px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+form .form-control {
+	margin: 10px;
+	border: 3px solid var(--color);
+	width: 30%;
+}
+
+form .form-control option {
+	background-color: var(--color);
+	color: #fff;
+	translate: 0.6s;
+}
+
+.carousel-inner {
+	box-shadow: 6px 5px 3px var(--color);
+	border-radius: 50%;
+	background-color: #fff;
+}
+
+/*profille*/
+.shopping-cart {
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.overflow {
+	overflow: scroll;
+	height: 80%;
+	overflow-x: hidden;
+	border: 6px solid var(--color);
+	padding: 15px;
+}
+
+.overflow .item {
+	border-bottom: 1px solid var(--color);
+	margin-bottom: 10px;
+	width: 80%;
+}
+.shopping-cart h2 {
+	margin-bottom: 20px;
+}
+
+.shopping-cart h3 {
+	margin-top: 20px;
+	border-bottom: 3px solid var(--color);
+	width: 85%;
+}
+
+.col-profile {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.col-profile .container {
+	width: 100%;
+	justify-content: center;
+}
+
+.col-profile .container .card {
+	border: 1px solid var(--color);
 }
