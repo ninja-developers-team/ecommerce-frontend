@@ -30,10 +30,18 @@ export class MainGames extends Component {
     );
   };
 
-  addFavouriteGame = async (object) => {
-    const postRequest = await axios.post(`${this.state.url}/addtocard`, object);
-    console.log(object);
-  };
+	addFavouriteGame = async (object) => {
+		const postRequest = await axios.post(
+			`${this.state.url}/addtocard`,
+			object
+		);
+		console.log(object, postRequest);
+		// this.setState({
+		// 	messege: postRequest.data,
+		// 	showApiMessege: true,
+		// });
+	};
+
 
   selectedValue = (e) => {
     let value = Number(e.target.value);
@@ -52,33 +60,38 @@ export class MainGames extends Component {
     });
   };
 
-  render() {
-    return (
-      <>
-        <form>
-          <select
-            class="form-control"
-            id="selectBox"
-            onClick={this.selectedValue}
-            placeholder="Filter Your Item"
-          >
-            <option value="">Filter Your Item </option>
-            <option value="1">from lowest to highest price</option>
-            <option value="2">From the highest price to the lowest</option>
-          </select>
-        </form>
-        <Row>
-          {this.state.showApiMessege && <h3>{this.state.messege}</h3>}
-          {this.state.showGameData && (
-            <GameApiData
-              gameApiData={this.state.gameApiData1}
-              addFavouriteGame={this.addFavouriteGame}
-            />
-          )}
-        </Row>
-      </>
-    );
-  }
+	render() {
+		return (
+			<>
+				<form>
+					{/* <label for="selectBox">Sort by price</label> */}
+					<select
+						class="form-control"
+						id="selectBox"
+						onClick={this.selectedValue}
+						placeholder="Filter Your Item"
+					>
+						<option value="">Filter Your Item </option>
+						<option value="1">from lowest to highest price</option>
+						<option value="2">From the highest price to the lowest</option>
+					</select>
+				</form>
+				<Row>
+					{this.state.showApiMessege && <h3>{this.state.messege}</h3>}
+					{this.state.showGameData && (
+						<GameApiData
+							gameApiData={this.state.gameApiData1}
+							addFavouriteGame={this.addFavouriteGame}
+							incrementQty={this.incrementQty}
+							Q={this.state.Q}
+							decrementQty={this.decrementQty}
+						/>
+					)}
+				</Row>
+			</>
+		);
+	}
+
 }
 
 export default MainGames;
