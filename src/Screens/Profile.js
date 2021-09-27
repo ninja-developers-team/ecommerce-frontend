@@ -12,19 +12,22 @@ export class Profile extends Component {
 		};
 	}
 	componentDidMount = async () => {
-		axios.get(`http://localhost:8181/getCart?email=sajamalkawi95@gmail.com`)
+		const { user } = this.props.auth0;
+
+		axios.get(`${REACT_APP_BACKEND_URL}/getCart?email=${user.email}`)
 			.then((res) => {
 				this.setState({ cardList: res.data });
 				console.log(res.data)
 			}, () => { console.log(this.state.cardList) })
 	};
 	render() {
+		let total = 0;
 		const { user, isAuthenticated } = this.props.auth0;
 		return (
 			<>
 				{isAuthenticated && (
-					<div className="row profileCOntainer">
-						<div class="col container d-flex justify-content-lift align-items-center">
+					<div className="profileCOntainer row" >
+						<div class=" container d-flex justify-content-lift align-items-center col-3">
 							<div class="card">
 								<div class="upper">
 									{" "}
@@ -62,14 +65,20 @@ export class Profile extends Component {
 								</div>
 							</div>
 						</div>
-						<div class="shopping-cart">
+
+						<div class="shopping-cart col-3">
 							<div class="title">
 								Shopping Bag
 							</div>
-							{this.state.cardList.map(
-								item => <ShopingCard item={item} />
-							)
+							{this.state.cardList
+								.map(
+									item => {
+										return (total = total + Number(item.price), < ShopingCard item={item} />)
+									}
+								)
 							}
+							<div class="total-price"> Total : ${total}</div>
+
 						</div>
 					</div>
 				)}

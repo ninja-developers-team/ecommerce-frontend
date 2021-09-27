@@ -1,6 +1,4 @@
-* {
-	color: #fff;
-}
+
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&family=Luckiest+Guy&family=Pacifico&display=swap");
 /* @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Pacifico&display=swap"); */
 :root {
@@ -13,9 +11,6 @@
 	justify-content: space-around;
 	padding: 15px;
 	align-items: center;
-}
-.card-text{
-	color: darkblue;
 }
 .footer ul {
 	list-style: none;
@@ -98,6 +93,7 @@
 	border: 2px solid #fff;
 }
 .homeNav h1 {
+	color: #fff;
 	font-family: "Lobster Two", cursive;
 }
 .homeCard {
@@ -168,6 +164,7 @@
 	transform: scale(1.2);
 }
 .card-game {
+	background-color: #fff;
 	margin-right: calc(var(--bs-gutter-x) * 3);
 	margin-left: calc(var(--bs-gutter-x) * 3);
 }
