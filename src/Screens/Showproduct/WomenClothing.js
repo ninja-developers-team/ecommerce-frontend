@@ -1,62 +1,96 @@
 import React, { Component } from "react";
 import WomanCard from "../card/WomanCard";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import axios from "axios";
 class WomenClothing extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			womanCollection: [],
-			showModel: false,
-		};
-	}
-	componentDidMount = async () => {
-		const clothing1 = await axios.get(
-			`https://asac-ecommerce-api.herokuapp.com/woman `
-		);
-		this.setState({
-			womanCollection: clothing1.data.data.woman,
-		});
-	};
-	selectedValue = (e) => {
-		let value = Number(e.target.value);
-		let womanCollection = this.state.womanCollection;
-		this.state.womanCollection.sort((a, b) => {
-			if (value === 2) {
-				return Number(b.price) - Number(a.price);
-			} else if (value === 1) {
-				return Number(a.price) - Number(b.price);
-			} else {
-				return this.state.womanCollection;
-			}
-		});
-		this.setState({
-			womanCollection: womanCollection,
-		});
-	};
-	render() {
-		return (
-			<div>
-				<form>
-					{/* <label for="selectBox">Sort by price</label> */}
-					<select
-						class="form-control"
-						id="selectBox"
-						onClick={this.selectedValue}
-						placeholder="Filter Your Item"
-					>
-						<option value="">Filter Your Item </option>
-						<option value="1">from lowest to highest price</option>
-						<option value="2">From the highest price to the lowest</option>
-					</select>
-				</form>
-				<Row xs={1} md={3} className="g-4">
-					{this.state.womanCollection.map((womanItem) => (
-						<WomanCard womanItem={womanItem} />
-					))}
-				</Row>
-			</div>
-		);
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      womanCollection: [],
+      showModel: false,
+    };
+  }
+  componentDidMount = async () => {
+    const clothing1 = await axios.get(
+      `https://asac-ecommerce-api.herokuapp.com/woman `
+    );
+    this.setState({
+      womanCollection: clothing1.data.data.woman,
+    });
+  };
+  selectedValue = (e) => {
+    let value = Number(e.target.value);
+    let womanCollection = this.state.womanCollection;
+    this.state.womanCollection.sort((a, b) => {
+      if (value === 2) {
+        return Number(b.price) - Number(a.price);
+      } else if (value === 1) {
+        return Number(a.price) - Number(b.price);
+      } else {
+        return this.state.womanCollection;
+      }
+    });
+
+    this.setState({
+      womanCollection: womanCollection,
+    });
+  };
+  selectType = (event) => {
+    let type = Number(event.target.value);
+    let womanCollection = this.state.womanCollection;
+
+    let regex1 = /[dres]/gi;
+    let newArr = [];
+    if (type === 1) {
+      console.log(this.state.womanCollection, "from45");
+      womanCollection.forEach((e) => {
+        if (regex1.test(e.title)) {
+          newArr.push(e);
+          console.log(e.title);
+        }
+        return newArr;
+      });
+    }
+    this.setState({
+      womanCollection: newArr,
+    });
+    console.log(newArr);
+  };
+
+  render() {
+    return (
+      <div>
+        <form>
+          {/* <label for="selectBox">Sort by price</label> */}
+          <select
+            class="form-control"
+            id="selectBox"
+            onClick={this.selectType}
+            placeholder="Filter Your Item"
+          >
+            <option value="">Filter Your Item </option>
+            <option value="1">Dressees</option>
+            <option value="2">Jacket</option>
+            <option value="3">Suit</option>
+          </select>
+          <select
+            class="form-control"
+            id="selectBox"
+            onClick={this.selectedValue}
+            placeholder="Filter Your Item"
+          >
+            <option value="">Filter Your Item </option>
+            <option value="1">from lowest to highest price</option>
+            <option value="2">From the highest price to the lowest</option>
+          </select>
+        </form>
+        <Row xs={1} md={3} className="g-4">
+          {this.state.womanCollection.map((womanItem) => (
+            <WomanCard womanItem={womanItem} />
+          ))}
+        </Row>
+      </div>
+    );
+  }
 }
 export default WomenClothing;

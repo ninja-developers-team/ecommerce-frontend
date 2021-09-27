@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Card, Button, Col } from "react-bootstrap";
-import { BsFillStarFill } from "react-icons/bs";
-import { BiDollar } from "react-icons/bi";
-import { AiFillFire } from "react-icons/ai";
+
 import { withAuth0 } from "@auth0/auth0-react";
 export class GameApiData extends Component {
 	constructor(props) {
@@ -18,14 +16,6 @@ export class GameApiData extends Component {
 			this.setState({ isActive: !this.state.isActive });
 		};
 		return this.props.gameApiData.map((obj, idx) => {
-			// const reqBody = {
-			// 	userEmail: user.email,
-			// 	imagePath: obj.thumb,
-			// 	title: obj.title,
-			// 	description: "no description to desplay",
-			// 	price: obj.salePrice,
-			// 	quantity: 5, ///from input
-			// };
 			return (
 				<>
 					<Col lg={3} md={6} sm={6} xs={12}>
@@ -33,7 +23,7 @@ export class GameApiData extends Component {
 							<img src={obj.image} alt="sample71" />
 							<div class="price"> {obj.price}</div>
 							<figcaption>
-								<h6>{obj.title}</h6>
+                <h6>{obj.title.replace(/[0-9]/g, "")}</h6>
 								<p>
 									{obj.description}
 									<div class="buttons col">
