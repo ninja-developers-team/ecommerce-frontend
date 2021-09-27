@@ -4,6 +4,7 @@ import axios from 'axios'
 import ShopingCard from "./Component/ShopingCard";
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Checkout from "./Component/Checkout";
 
 const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL
 export class Profile extends Component {

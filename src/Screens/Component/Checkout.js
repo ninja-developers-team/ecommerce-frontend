@@ -1,8 +1,58 @@
 import React, { Component } from 'react'
+import axios from 'axios';
+import { withAuth0 } from "@auth0/auth0-react";
 
+
+const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL
 export class Checkout extends Component {
+   constructor(props){
+       super(props);
+       this.state={
+          countries:[],
+          cartList:[],        
+   }
+}
+
+
+ componentDidMount(){
+
+    const { user} = this.props.auth0;
+    
+    // get all the countries using Countries and cities Api
+    axios.get("https://countriesnow.space/api/v0.1/countries")
+       .then(res=>{
+            console.log(res.data.data);
+
+            this.setState({
+                countries:res.data.data
+            })
+
+            console.log(this.state.countries);
+       })
+       .catch(err=> {
+        console.log(err);
+       })
+
+
+      
+      //git User cartList form the checkout  
+       axios.get(`${REACT_APP_BACKEND_URL}/getCart?email=${user.email}`)
+            .then((res) => {
+                console.log(res.data,'asdasdasds')
+                this.setState({ 
+                    cartList: res.data 
+                });
+                
+            }, () => { console.log(this.state.cartList) })
+
+
+
+
+
+ }
+
     render() {
-        //let total = 0;
+        let total = 0;
         return (
             <div>
                 <div className="maincontainer">
@@ -27,7 +77,7 @@ export class Checkout extends Component {
                  
                
                
-                 {/* {this.props.cardList.map(item=>{
+                  {this.state.cartList.map(item=>{
                  return (total = total + Number(item.price),
 
                  <li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -45,7 +95,7 @@ export class Checkout extends Component {
              <li class="list-group-item d-flex justify-content-between">
                  <span>Total (USD)</span>
                  <strong>${total}</strong>
-               </li>*/}
+               </li>
 
                <li class="list-group-item d-flex justify-content-between lh-condensed">
                  <div>
@@ -121,22 +171,25 @@ export class Checkout extends Component {
                <div class="row">
                  <div class="col-md-5 mb-3">
                    <label for="country">Country</label>
-                   <select class="custom-select d-block w-100" id="country" required>
+                   <select cclass="form-control" id="country" required>
                      <option value="">Choose...</option>
-                     <option>United States</option>
+                      {
+                          this.state.countries.map((country)=>{
+                                return <option>{country.country}</option>
+                          })
+
+                      }
+                     
                    </select>
                    <div class="invalid-feedback">
                      Please select a valid country.
                    </div>
                  </div>
-                 <div class="col-md-4 mb-3">
-                   <label for="state">State</label>
-                   <select class="custom-select d-block w-100" id="state" required>
-                     <option value="">Choose...</option>
-                     <option>California</option>
-                   </select>
+                 <div class="col-md-3 mb-3">
+                   <label for="state">state</label>
+                   <input type="text" class="form-control" id="state" placeholder="" required />
                    <div class="invalid-feedback">
-                     Please provide a valid state.
+                   Please select a valid state
                    </div>
                  </div>
                  <div class="col-md-3 mb-3">
@@ -147,15 +200,9 @@ export class Checkout extends Component {
                    </div>
                  </div>
                </div>
-               <hr class="mb-4" />
-               <div class="custom-control custom-checkbox">
-                 <input type="checkbox" class="custom-control-input" id="same-address" />
-                 <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-               </div>
-               <div class="custom-control custom-checkbox">
-                 <input type="checkbox" class="custom-control-input" id="save-info" />
-                 <label class="custom-control-label" for="save-info">Save this information for next time</label>
-               </div>
+                 
+            
+                 
                <hr class="mb-4" />
                <h4 class="mb-3">Payment</h4>
                <div class="d-block my-3">
@@ -206,7 +253,7 @@ export class Checkout extends Component {
                  </div>
                </div>
                <hr class="mb-4" />
-               <button  class="btn btn-primary btn-lg btn-block" type="button">Pay</button>
+               <button class="btn btn-primary btn-lg btn-block" type="button">Pay</button>
              </form>
            </div>
          </div>
@@ -223,5 +270,5 @@ export class Checkout extends Component {
     }
 }
 
-export default Checkout
+export default withAuth0(Checkout);
 
