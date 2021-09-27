@@ -10,42 +10,43 @@ import Profile from "./Screens/Profile";
 import Jewelery from "./Screens/Showproduct/Jewelery";
 import WomenClothing from "./Screens/Showproduct/WomenClothing";
 import MenClothing from "./Screens/Showproduct/MenClothing";
-import MainGames from "./Component/GameApiData";
+
+import MainGames from "./Component/MainGames";
 import Electronics from "./Screens/Showproduct/Electronics";
 import "./style.css";
 class App extends React.Component {
-	render() {
-		return (
-			<>
-				<Router>
-					<Header />
-					<Switch>
-						<Route exact path="/">
-							{this.props.auth0.isAuthenticated ? <Main /> : <Login />}
-						</Route>
-						<Route exact path="/profile">
-							<Profile />
-						</Route>
-						<Route exact path="/game">
-							<MainGames />
-						</Route>
-						<Route exact path="/clothing1">
-							<WomenClothing />
-						</Route>
-						<Route exact path="/jewelery">
-							<Jewelery />
-						</Route>
-						<Route exact path="/electronics">
-							<Electronics />
-						</Route>
-						<Route exact path="/clothing2">
-							<MenClothing />
-						</Route>
-					</Switch>
-					<Footer />
-				</Router>
-			</>
-		);
-	}
+  render() {
+    return (
+      <>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              {this.props.auth0.isAuthenticated ? <Main /> : <Login />}
+            </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
+            <Route exact path="/game">
+              <MainGames />
+            </Route>
+            <Route exact path="/clothing1">
+              <WomenClothing />
+            </Route>
+            <Route exact path="/jewelery">
+              <Jewelery />
+            </Route>
+            <Route exact path="/electronics">
+              <Electronics />
+            </Route>
+            <Route exact path="/clothing2">
+              <MenClothing />
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
+      </>
+    );
+  }
 }
 export default withAuth0(App);
