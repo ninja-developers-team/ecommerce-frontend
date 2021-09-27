@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { Card, Button, Col } from "react-bootstrap";
-import { BsFillStarFill } from "react-icons/bs";
-import { BiDollar } from "react-icons/bi";
-import { AiFillFire } from "react-icons/ai";
+import { Col } from "react-bootstrap";
 import { withAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 let REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -140,13 +137,18 @@ class MenCard extends Component {
                 </Button>
                 <div class="buttons col" >
                   <span className={this.state.isActive ? "like-btn  is-active" : "like-btn"} onClick={handleToggle} ></span>
+
                 </div>
-              </div>
-            </Card.Body>
-          </Card> */}
-				</Col>
-			</>
-		);
-	}
+              </p>
+              <a href="#" onClick={(e) => this.addToCardHandler(user)}>
+                Add to Cart
+              </a>
+            </figcaption>
+          </figure>
+          */}
+        </Col>
+      </>
+    );
+  }
 }
 export default withAuth0(MenCard);

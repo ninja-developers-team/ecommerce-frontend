@@ -3,32 +3,32 @@ import axios from "axios";
 import GameApiData from "./GameApiData";
 import { Row } from "react-bootstrap";
 export class MainGames extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			url: process.env.REACT_APP_BACKEND_URL,
-			gameApiData1: [],
-			showGameData: false,
-			showApiMessege: false,
-			messege: "",
-		};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      url: process.env.REACT_APP_BACKEND_URL,
+      gameApiData1: [],
+      showGameData: false,
+      showApiMessege: false,
+      messege: "",
+    };
+  }
 
-	componentDidMount = async () => {
-		axios.get(`https://asac-ecommerce-api.herokuapp.com/game`).then(
-			(res) => {
-				console.log(this.state.gameApiData1.data, "from did amunt");
-				this.setState({
-					gameApiData1: res.data.data.game,
-					showGameData: true,
-				});
-				console.log(this.state.gameApiData1.data, "from did amunt");
-			},
-			() => {
-				console.log(this.state.gameApiData1.data);
-			}
-		);
-	};
+  componentDidMount = async () => {
+    axios.get(`https://asac-ecommerce-api.herokuapp.com/game`).then(
+      (res) => {
+        console.log(this.state.gameApiData1.data, "from did amunt");
+        this.setState({
+          gameApiData1: res.data.data.game,
+          showGameData: true,
+        });
+        console.log(this.state.gameApiData1.data, "from did amunt");
+      },
+      () => {
+        console.log(this.state.gameApiData1.data);
+      }
+    );
+  };
 
 	addFavouriteGame = async (object) => {
 		const postRequest = await axios.post(
@@ -42,22 +42,23 @@ export class MainGames extends Component {
 		// });
 	};
 
-	selectedValue = (e) => {
-		let value = Number(e.target.value);
-		let gameApiData1 = this.state.gameApiData1;
-		this.state.gameApiData1.sort((a, b) => {
-			if (value === 2) {
-				return Number(b.price) - Number(a.price);
-			} else if (value === 1) {
-				return Number(a.price) - Number(b.price);
-			} else {
-				return this.state.womanCollection;
-			}
-		});
-		this.setState({
-			gameApiData1: gameApiData1,
-		});
-	};
+
+  selectedValue = (e) => {
+    let value = Number(e.target.value);
+    let gameApiData1 = this.state.gameApiData1;
+    this.state.gameApiData1.sort((a, b) => {
+      if (value === 2) {
+        return Number(b.price) - Number(a.price);
+      } else if (value === 1) {
+        return Number(a.price) - Number(b.price);
+      } else {
+        return this.state.womanCollection;
+      }
+    });
+    this.setState({
+      gameApiData1: gameApiData1,
+    });
+  };
 
 	render() {
 		return (
@@ -90,6 +91,7 @@ export class MainGames extends Component {
 			</>
 		);
 	}
+
 }
 
 export default MainGames;
