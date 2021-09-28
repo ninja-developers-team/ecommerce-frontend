@@ -123,9 +123,13 @@ input:focus {
 }
 
 .maincontainer{
-    margin-left:  20%;
-    margin-right: 20%;
+    margin-left:  25%;
+    margin-right: 25%;
 }
+.pay-btn,#country{
+width: 100%;
+}
+
 @media (max-width: 800px) {
   .shopping-cart {
     width: 100%;

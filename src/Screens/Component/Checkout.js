@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { withAuth0 } from "@auth0/auth0-react";
+import { Link } from 'react-router-dom';
 
 
 const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL
@@ -155,8 +156,11 @@ export class Checkout extends Component {
                     </div>
                     <div class="containerCheckout">
                         <div class="py-5 text-center">
-
                             <h2>Checkout </h2>
+                        </div>
+                        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+                            <h5 class="my-0 mr-md-auto font-weight-normal"></h5>
+
                         </div>
                         <div class="row">
                             <div class="col-md-4 order-md-2 mb-4">
@@ -177,32 +181,10 @@ export class Checkout extends Component {
                                                 <span class="text-muted">$ {item.price}</span>
                                             </li>)
                                     })}
-
-
-                                    {
-                                    !this.state.showDiscount ?
-                                        <li class="list-group-item d-flex justify-content-between">
-                                            <span>Total (USD)</span>
-                                            <strong>${total}</strong>
-                                        </li> :
-                                            
-                                            <>
-                                            <li class="list-group-item d-flex justify-content-between lh-condensed">
-                                                <div>
-                                                    <h6 class="my-0">You have a discount</h6>
-                                                    {/*<small class="text-muted">{item.quantity}</small>*/}
-                                                </div>
-                                                <strong>{this.state.disconutNum}%</strong>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between">
-                                                <span>Total Before Discount (USD)</span>
-                                                <strong><del>${total}</del></strong>
-                                            </li><li class="list-group-item d-flex justify-content-between">
-                                                <span>Total After Discount (USD)</span>
-                                                <strong>${this.state.totlaWithdiscount}</strong>
-                                            </li>
-                                        </>}
-
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Total (USD)</span>
+                                        <strong>${total}</strong>
+                                    </li>
                                 </ul>
                                 <form class="card p-2" onSubmit={this.handleDiscount}>
                                     <div class="input-group">
@@ -211,6 +193,25 @@ export class Checkout extends Component {
                                             <button type="submit" class="btn btn-secondary">Redeem</button>
                                         </div>
                                     </div>
+                                    {
+                                        this.state.showDiscount &&
+
+
+                                        <>
+                                            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                                <div>
+                                                    <h6 class="my-0">Your Discount</h6>
+                                                </div>
+                                                <strong>{this.state.disconutNum}%</strong>
+                                            </li><li class="list-group-item d-flex justify-content-between">
+                                                <span>Total (USD)</span>
+                                                <strong><del>${total}</del></strong>
+                                            </li><li class="list-group-item d-flex justify-content-between">
+                                                <span>Total After Discount (USD)</span>
+                                                <strong>${this.state.totlaWithdiscount}</strong>
+                                            </li>
+                                        </>
+                                    }
                                 </form>
                             </div>
                             <div class="col-md-8 order-md-1">
@@ -265,7 +266,7 @@ export class Checkout extends Component {
                                     <div class="row">
                                         <div class="col-md-5 mb-3">
                                             <label for="country">Country</label>
-                                            <select cclass="form-control" id="country" required>
+                                            <select cclass="form-control" id="country" required >
                                                 <option value="">Choose...</option>
                                                 {
                                                     this.state.countries.map((country) => {
@@ -347,7 +348,10 @@ export class Checkout extends Component {
                                         </div>
                                     </div>
                                     <hr class="mb-4" />
-                                    <button class="btn btn-primary btn-lg btn-block" type="button">Pay</button>
+                                    <Link to="/">
+                                        <button class="pay-btn" class="btn btn-primary btn-lg btn-block" type="button">Pay</button>
+                                    </Link>
+
                                 </form>
                             </div>
                         </div>
