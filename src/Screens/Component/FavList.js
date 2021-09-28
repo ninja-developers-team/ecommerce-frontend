@@ -1,17 +1,27 @@
 import React, { Component } from "react";
 import { AiFillDelete } from "react-icons/ai";
-export class ShopingCard extends Component {
+import axios from "axios";
+const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
+export class FavList extends Component {
+
+  del = async () => {
+    const reqBody = {
+      userEmail: this.props.user.email,
+      imagePath: this.props.item.image,
+      title: this.props.item.title,
+      description: this.props.item.description,
+      price: this.props.item.price,
+    };
+    const Data = await axios.post(
+      `${REACT_APP_BACKEND_URL}/addtofav`,
+      reqBody
+    );
+  }
   render() {
+
     return (
       <div class="item">
-        <div class="buttons">
-          <span
-            class="delete-btn"
-            onClick={() => {
-              this.props.delFromCard(this.props.item._id);
-            }}
-          ></span>
-        </div>
         <div class="image">
           <img
             src={this.props.item.imagePath}
@@ -23,11 +33,10 @@ export class ShopingCard extends Component {
           <span>{this.props.item.title}</span>
         </div>
         <div class="total-price">{this.props.item.price}</div>
-        <div class="total-price">{this.props.item.quantity}</div>
         <div class="buttons">
           <AiFillDelete
             onClick={() => {
-              this.props.delFromCard(this.props.item._id);
+              this.del();
             }}
             style={{ cursor: "pointer" }}
           />
@@ -36,4 +45,4 @@ export class ShopingCard extends Component {
     );
   }
 }
-export default ShopingCard;
+export default FavList;

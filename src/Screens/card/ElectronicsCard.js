@@ -131,10 +131,10 @@ class ElectronicsCard extends Component {
               </a>
             </figcaption>
           </figure>
-          }*/
-        </Col>
-      </>
-    );
-  }
+         */ }
+				</Col>
+			</>
+		);
+	}
 }
 export default withAuth0(ElectronicsCard);

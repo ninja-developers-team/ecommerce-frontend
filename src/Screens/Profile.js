@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import ShopingCard from "./Component/ShopingCard";
+import FavList from "./Component/FavList";
 import { Col, Row } from "react-bootstrap";
 
 const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -10,16 +11,18 @@ export class Profile extends Component {
     super(props);
     this.state = {
       cardList: [],
+      favList: []
     };
   }
   delFromCard = (itemId) => {
     axios
-      .delete(`${process.env.REACT_APP_BACKEND_URL}/delfromcard/${itemId}`)
+      .delete(`${REACT_APP_BACKEND_URL}/delfromcard/${itemId}`)
       .then((res) => {
         this.getCart();
       })
       .catch((error) => alert(error));
   };
+
   getCart = () => {
     const { user } = this.props.auth0;
     axios.get(`${REACT_APP_BACKEND_URL}/getCart?email=${user.email}`).then(
@@ -31,8 +34,20 @@ export class Profile extends Component {
       }
     );
   };
+  getFav = () => {
+    const { user } = this.props.auth0;
+    axios.get(`${REACT_APP_BACKEND_URL}/getCartFav?email=${user.email}`).then(
+      (res) => {
+        this.setState({ favList: res.data });
+      },
+      () => {
+        console.log(this.state.cardList);
+      }
+    );
+  };
   componentDidMount = async () => {
     this.getCart();
+    this.getFav();
   };
   render() {
     let total = 0;
@@ -99,6 +114,7 @@ export class Profile extends Component {
                       )
                     );
                   })}
+
                 </div>
                 <div class="total-price">
                   {" "}
@@ -106,7 +122,27 @@ export class Profile extends Component {
                 </div>
               </div>
             </Col>
+            <Col className="col-profile">
+              <div class="shopping-cart col-3">
+                <div class="title">
+                  <h2>List</h2>
+                </div>
+                <div class="overflow">
+                  {this.state.favList.map((item) => {
+                    return (
+                      (
+                        <FavList
+                          item={item} user={user}
+                        />
+                      )
+                    );
+                  })}
+
+                </div>
+              </div>
+            </Col>
           </Row>
+
         )}
       </>
     );

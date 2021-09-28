@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import { Card, Button, Col } from "react-bootstrap";
 import { withAuth0 } from "@auth0/auth0-react";
-import { Col } from "react-bootstrap"
 import axios from "axios";
 let REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 class WomanCard extends Component {
@@ -124,8 +123,8 @@ class WomanCard extends Component {
           </figcaption>
         </figure>
         */}
-      </Col>
-    );
-  }
+			</Col>
+		);
+	}
 }
 export default withAuth0(WomanCard);
