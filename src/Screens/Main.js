@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import CarouselMain from "./Component/CarouselMain";
+import { Carousel } from "react-bootstrap";
 export class Main extends Component {
 	constructor(props) {
 		super(props);
@@ -73,37 +74,101 @@ export class Main extends Component {
 	render() {
 		console.log(this.state.jeweleryData);
 		return (
-			<div className="row homeCard">
-				{this.state.jeweleryData.length > 0 && (
-					<>
-						<CarouselMain
-							jeweleryData={this.state.jeweleryData}
-							path="/jewelery"
-							category="Jewelery"
-						/>
-						<CarouselMain
-							jeweleryData={this.state.clothing2Data}
-							path="/clothing2"
-							category={`Men' s clothing`}
-						/>
-						<CarouselMain
-							jeweleryData={this.state.electronicsData}
-							path="/electronics"
-							category="Children"
-						/>
-						<CarouselMain
-							jeweleryData={this.state.clothing1Data}
-							path="/clothing1"
-							category={`Women' s clothing`}
-						/>
-						<CarouselMain
-							jeweleryData={this.state.gamesData}
-							path="/game"
-							category="Games"
-						/>
-					</>
-				)}
-			</div>
+			<>
+				<div>
+					<Carousel
+						className="carousel-home"
+						nextIcon=""
+						prevIcon=""
+						nextLabel=""
+						prevLabel=""
+						interval="2000"
+						indicators="false"
+					>
+						<Carousel.Item>
+							<img
+								className="d-block w-100"
+								src="https://dlq00ggnjruqn.cloudfront.net/prometheus/getImage?id=322298"
+								alt="First slide"
+								height="600px"
+								style={{ objectFit: "cover" }}
+							/>
+							<Carousel.Caption>
+								<h3>First slide label</h3>
+								<p>
+									Nulla vitae elit libero, a pharetra augue mollis interdum.
+								</p>
+							</Carousel.Caption>
+						</Carousel.Item>
+						<Carousel.Item>
+							<img
+								className="d-block w-100"
+								src="https://www.expatica.com/app/uploads/sites/11/2014/05/Shopping.jpg"
+								alt="First slide"
+								height="600px"
+								style={{ objectFit: "cover" }}
+							/>
+							<Carousel.Caption>
+								<h3>First slide label</h3>
+								<p>
+									Nulla vitae elit libero, a pharetra augue mollis interdum.
+								</p>
+							</Carousel.Caption>
+						</Carousel.Item>
+						<Carousel.Item>
+							<img
+								className="d-block w-100"
+								src="https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg?cs=srgb&dl=pexels-freestocksorg-291762.jpg&fm=jpg"
+								alt="First slide"
+								height="600px"
+								style={{ objectFit: "cover" }}
+							/>
+							<Carousel.Caption>
+								<h3>First slide label</h3>
+								<p>
+									Nulla vitae elit libero, a pharetra augue mollis interdum.
+								</p>
+							</Carousel.Caption>
+						</Carousel.Item>
+					</Carousel>
+				</div>
+				<div className="row homeCard">
+					{this.state.jeweleryData.length > 0 && (
+						<>
+							<CarouselMain
+								jeweleryData={this.state.jeweleryData}
+								path="/jewelery"
+								category="Jewelery"
+								className="carosel-item"
+							/>
+							<CarouselMain
+								jeweleryData={this.state.clothing2Data}
+								path="/clothing2"
+								category={`Men' s clothing`}
+								className="carosel-item"
+							/>
+							<CarouselMain
+								jeweleryData={this.state.electronicsData}
+								path="/electronics"
+								category="Children"
+								className="carosel-item"
+							/>
+							<CarouselMain
+								jeweleryData={this.state.clothing1Data}
+								path="/clothing1"
+								category={`Women' s clothing`}
+								className="carosel-item"
+							/>
+							<CarouselMain
+								jeweleryData={this.state.gamesData}
+								path="/game"
+								category="Games"
+								className="carosel-item"
+							/>
+						</>
+					)}
+				</div>
+			</>
 		);
 	}
 }

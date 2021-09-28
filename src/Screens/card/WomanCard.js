@@ -9,23 +9,23 @@ class WomanCard extends Component {
 		super(props);
 		this.state = {
 			isActive: false,
-			Q: 1
+			Q: 1,
 		};
 	}
 	incrementQty = () => {
 		this.setState({
-			Q: this.state.Q + 1
-		})
-	}
+			Q: this.state.Q + 1,
+		});
+	};
 	decrementQty = () => {
-		this.state.Q > 0 ?
-			this.setState({
-				Q: this.state.Q - 1
-			}) :
-			this.setState({
-				Q: 0
-			})
-	}
+		this.state.Q > 0
+			? this.setState({
+					Q: this.state.Q - 1,
+			  })
+			: this.setState({
+					Q: 0,
+			  });
+	};
 	addToCardHandler = async (user) => {
 		const reqBody = {
 			userEmail: user.email,
@@ -66,31 +66,40 @@ class WomanCard extends Component {
 				<figure class="snip1171">
 					<img src={this.props.womanItem.image} alt="sample71" />
 					<div class="price"> {this.props.womanItem.price}</div>
+					<div class="">
+						<span
+							className={
+								this.state.isActive ? "like-btn  is-active" : "like-btn"
+							}
+							onClick={handleToggle}
+						></span>
+					</div>
 					<figcaption>
 						<h6>{this.props.womanItem.title}</h6>
 						<p> {this.props.womanItem.description}</p>
 						<div class="qty-block">
 							<div class="qty">
-								<input type="text" name="qty" maxlength="12" value={this.state.Q} title="" class="input-text" />
+								<input
+									type="text"
+									name="qty"
+									maxlength="12"
+									value={this.state.Q}
+									title=""
+									class="input-text"
+								/>
 								<div class="qty_inc_dec">
-									<i class="increment" onClick={() => this.incrementQty()}>+</i>
-									<i class="decrement" onClick={() => this.decrementQty()}>-</i>
+									<i class="increment" onClick={() => this.incrementQty()}>
+										+
+									</i>
+									<i class="decrement" onClick={() => this.decrementQty()}>
+										-
+									</i>
 								</div>
 							</div>
 						</div>
 						<a href="#" onClick={(e) => this.addToCardHandler(user)}>
 							Add to Cart
 						</a>
-						<div class="">
-							<span
-								className={
-									this.state.isActive ? "like-btn  is-active" : "like-btn"
-								}
-								onClick={handleToggle}
-							>
-
-							</span>
-						</div>
 					</figcaption>
 				</figure>
 				{/* <Card style={{ width: "18rem" }}>

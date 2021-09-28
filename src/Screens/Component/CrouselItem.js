@@ -7,7 +7,14 @@ export class CrouselItem extends Component {
 		return (
 			<div className="col d-block">
 				<Link to={`${this.props.path}`} className="nav-link">
-					<Carousel fade nextIcon="" nextLabel="" prevIcon="" prevLabel="">
+					<Carousel
+						className="carousel-product"
+						fade
+						nextIcon=""
+						nextLabel=""
+						prevIcon=""
+						prevLabel=""
+					>
 						{items.map((jel) => {
 							return (
 								<Carousel.Item>
