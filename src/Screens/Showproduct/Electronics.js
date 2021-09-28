@@ -14,7 +14,10 @@ class Electronics extends Component {
     axios
       .get(`https://asac-ecommerce-api.herokuapp.com/children`)
       .then((res) => {
-        this.setState({ electronicsList: res.data.data.children });
+        this.setState({
+          electronicsList: res.data.data.children,
+          electronicsList2: res.data.data.children,
+        });
       });
     console.log(this.state.electronicsList, "from kjj");
   };
@@ -34,10 +37,39 @@ class Electronics extends Component {
       electronicsList: electronicsList,
     });
   };
+  selectType = (event) => {
+    let type = event.target.value.toLowerCase();
+    console.log(type);
+    if (type) {
+      let filterdData = this.state.electronicsList2.filter((card) => {
+        return card.title.toLowerCase().includes(type);
+      });
+      this.setState({
+        electronicsList: filterdData,
+      });
+      console.log(this.state.electronicsList);
+    }
+    if (type === "all") {
+      this.setState({
+        electronicsList: this.state.electronicsList2,
+      });
+    }
+  };
   render() {
     return (
       <div>
         <form>
+          <select
+            class="form-control"
+            onChange={this.selectType}
+            placeholder="Filter Your Item"
+          >
+            <option value="all">Filter Your Item On Categories </option>
+            <option value="Dresses">Dresses</option>
+            <option value="SLEEPWEAR">Slepwear</option>
+            <option value="SHIRT">shirt</option>
+            <option value="SPORTS">Sports</option>
+          </select>
           {/* <label for="selectBox">Sort by price</label> */}
           <select
             class="form-control"
