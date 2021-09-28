@@ -4,6 +4,8 @@ import axios from "axios";
 import ShopingCard from "./Component/ShopingCard";
 import FavList from "./Component/FavList";
 import { Col, Row } from "react-bootstrap";
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 export class Profile extends Component {
@@ -139,8 +141,15 @@ export class Profile extends Component {
                   })}
 
                 </div>
+                <Link to="/Checkout">
+                                    <Button variant="light">
+                                        Checkout
+                                    </Button>
+                                </Link>
               </div>
             </Col>
+          
+
           </Row>
 
         )}

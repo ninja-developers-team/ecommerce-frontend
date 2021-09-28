@@ -1,3 +1,10 @@
+.maincontainer{
+    margin-left:  25%;
+    margin-right: 25%;
+}
+#pay-btn,#country{
+    width:100%;
+    }
 /* .shopping-cart {
 	width: 750px;
 	height: 423px;
