@@ -30,7 +30,7 @@ export class Checkout extends Component {
 
         const { user } = this.props.auth0;
 
-        // get all the countries using Countries and cities Api
+        //Get all the countries using Countries and cities Api
         axios.get("https://countriesnow.space/api/v0.1/countries")
             .then(res => {
                 console.log(res.data.data);
@@ -114,7 +114,10 @@ export class Checkout extends Component {
             })
 
         } else {
-            return;
+            this.setState({
+                
+                showDiscount:false
+            })
         }
 
 
@@ -349,7 +352,7 @@ export class Checkout extends Component {
                                     </div>
                                     <hr class="mb-4" />
                                     <Link to="/">
-                                        <button class="pay-btn" class="btn btn-primary btn-lg btn-block" type="button">Pay</button>
+                                        <button id="pay-btn" class="pay-btn-checkout" class="btn btn-primary " type="button">Pay</button>
                                     </Link>
 
                                 </form>

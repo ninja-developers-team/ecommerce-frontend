@@ -126,9 +126,15 @@ input:focus {
     margin-left:  25%;
     margin-right: 25%;
 }
-.pay-btn,#country{
-width: 100%;
+/*.pay-btn-checkout{
+    width: 100%;
+
 }
+*/
+
+#pay-btn,#country{
+    width:100%;
+    }
 
 @media (max-width: 800px) {
   .shopping-cart {
