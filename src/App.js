@@ -10,7 +10,6 @@ import Profile from "./Screens/Profile";
 import Jewelery from "./Screens/Showproduct/Jewelery";
 import WomenClothing from "./Screens/Showproduct/WomenClothing";
 import MenClothing from "./Screens/Showproduct/MenClothing";
-
 import MainGames from "./Component/MainGames";
 import Electronics from "./Screens/Showproduct/Electronics";
 import "./style.css";
