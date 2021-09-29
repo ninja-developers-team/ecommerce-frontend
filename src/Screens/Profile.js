@@ -13,6 +13,9 @@ export class Profile extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+<<<<<<< HEAD
+			cardList: [],
+=======
 			cardList: [
 				{
 					title: "LapTop Lenove",
@@ -43,6 +46,7 @@ export class Profile extends Component {
 					price: 280,
 				},
 			],
+>>>>>>> solve
 			favList: [],
 		};
 	}

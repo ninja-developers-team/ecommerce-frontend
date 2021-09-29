@@ -6,6 +6,46 @@ body {
   overflow-x: hidden;
 }
 :root {
+<<<<<<< HEAD
+	--color: #79b4b7;
+}
+* {
+	font-family: "Poppins", sans-serif;
+	/*font-family: "Concert One", cursive;*/
+}
+.footer {
+	background-color: var(--color);
+	color: #fff;
+
+	justify-content: space-around;
+
+	align-items: center;
+	padding-bottom: 0;
+	margin-top: 0;
+}
+
+.footer a {
+	color: #fff;
+	text-decoration: none;
+}
+.footer .first {
+	text-align: start;
+}
+
+.footer .first {
+	border-right: 1px solid #fff;
+}
+
+.footer ul {
+	list-style: none;
+	text-align: start;
+	justify-content: space-around;
+	padding: 0;
+}
+
+.footer h5 {
+	text-align: start;
+=======
   --color: #79b4b7;
 }
 * {
@@ -44,6 +84,7 @@ body {
 
 .footer h5 {
   text-align: start;
+>>>>>>> solve
 }
 .footer ul li {
   margin: 10px;
@@ -57,7 +98,62 @@ body {
 .footer-copyright {
   border-top: 1px solid #fff;
 }
+
+.footer-copyright {
+	border-top: 1px solid #fff;
+}
 .main {
+<<<<<<< HEAD
+	background-color: #fff;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+	background-image: url("https://gravyanalytics.com/wp-content/uploads/2018/06/Mall-Lovers-and-Frequent-Shoppers-1200x900.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.main h1 {
+	color: #fff;
+	text-shadow: 10px 5px 5px var(--color);
+}
+.main .card {
+	margin: auto;
+	min-width: 50%;
+	border: none;
+	padding: 20px;
+	margin: 20px;
+	opacity: 0.78;
+	background-color: var(--color);
+	color: #ffffff;
+}
+.main .card .card-body {
+	flex: 1 1 auto;
+	padding: 1rem 1rem;
+	border: 3px solid var(--color);
+	box-shadow: 10px 10px 10px #fff;
+	border-radius: 10px 0;
+	margin-top: 20px;
+}
+.main .card .card-body p {
+	color: #fff;
+}
+.main .card .card-body h2 {
+	color: #fff;
+}
+.main .card .card-body button {
+	color: var(--color);
+	border: 1px solid #fff;
+	padding: 15px 32px;
+	background-color: #fff;
+	border-radius: 5px;
+	font-weight: bold;
+	transition: 0.6s;
+=======
   background-color: #fff;
   height: 100vh;
   display: flex;
@@ -107,12 +203,30 @@ body {
   border-radius: 5px;
   font-weight: bold;
   transition: 0.6s;
+>>>>>>> solve
 }
 .main .card .card-body button:hover {
   background-color: var(--color);
   color: #fff;
 }
 .homeNav {
+<<<<<<< HEAD
+	background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	color: var(--color);
+	border-bottom: 3px solid var(--color);
+}
+.homeNav button {
+	color: var(--color);
+	border: none;
+	padding: 10px 15px;
+	background-color: #fff;
+
+	font-weight: bold;
+	transition: 0.6s;
+=======
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -128,6 +242,7 @@ body {
 
   font-weight: bold;
   transition: 0.6s;
+>>>>>>> solve
 }
 .homeNav button:hover {
   background-color: var(--color);
@@ -135,8 +250,13 @@ body {
   border: 2px solid #fff;
 }
 .homeNav h1 {
+<<<<<<< HEAD
+	color: var(--color);
+	font-family: "Lobster Two", cursive;
+=======
   color: var(--color);
   font-family: "Lobster Two", cursive;
+>>>>>>> solve
 }
 /* .homeNav a {
 	color: var(--color);
@@ -160,6 +280,10 @@ body {
 .carousel-indicators {
   opacity: 0;
 }
+
+.carousel-indicators {
+	opacity: 0;
+}
 .navHead {
   background-color: var(--color);
 }
@@ -167,18 +291,31 @@ body {
   align-items: center;
 }
 .navbar-expand-lg .navbar-nav .item {
+<<<<<<< HEAD
+	color: var(--color);
+	transition: 0.5s ease-in-out;
+	margin: 10px;
+=======
   color: var(--color);
   transition: 0.5s ease-in-out;
   margin: 10px;
+>>>>>>> solve
 }
 .inneritem {
   border-bottom: 1px solid var(--color);
 }
 .navbar-expand-lg .navbar-nav .item:hover {
+<<<<<<< HEAD
+	opacity: 0.5;
+	color: var(--color);
+	transform: scale(1.3);
+	font-weight: bold;
+=======
   opacity: 0.5;
   color: var(--color);
   transform: scale(1.3);
   font-weight: bold;
+>>>>>>> solve
 }
 .profileCOntainer {
   height: 100vh;
@@ -209,8 +346,13 @@ body {
 }
 
 .nav-game a.active {
+<<<<<<< HEAD
+	border-bottom: 3px solid #fff;
+	transform: scale(1.2);
+=======
   border-bottom: 3px solid #fff;
   transform: scale(1.2);
+>>>>>>> solve
 }
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
@@ -325,6 +467,9 @@ figure.snip1171 a:before {
 .button-game {
   color: #fff;
 }
+.button-game {
+	color: #fff;
+}
 /*scroll bar*/
 ::-webkit-scrollbar {
   width: 10px;
@@ -369,6 +514,31 @@ figure.snip1171 a:before {
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
+<<<<<<< HEAD
+	/* color: rgba(0,0,0,.9); */
+	color: var(--color);
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+	transform: scale(1.2);
+	font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link svg {
+	color: var(--color);
+	transition: 0.6s;
+}
+
+.navbar-light .navbar-nav .nav-link svg:hover {
+	transform: scale(1.3);
+	font-weight: bold;
+	color: black;
+}
+
+.title-carousel {
+	color: var(--color);
+	font-weight: bold;
+=======
   /* color: rgba(0,0,0,.9); */
   color: var(--color);
 }
@@ -392,6 +562,7 @@ figure.snip1171 a:before {
 .title-carousel {
   color: var(--color);
   font-weight: bold;
+>>>>>>> solve
 }
 
 .dropdown-menu .dropdown-item .inneritem {
@@ -422,6 +593,17 @@ figure.snip1171 a:before {
   cursor: pointer;
 }
 .like-btn {
+<<<<<<< HEAD
+	top: 0;
+	left: 0;
+	background: url(https://designmodo.com/demo/shopping-cart/twitter-heart.png);
+	width: 60px;
+	height: 40px;
+	background-size: 2900%;
+	background-repeat: no-repeat;
+	position: absolute;
+	transition: 0.6s;
+=======
   top: 0;
   left: 0;
   background: url(https://designmodo.com/demo/shopping-cart/twitter-heart.png);
@@ -431,6 +613,7 @@ figure.snip1171 a:before {
   background-repeat: no-repeat;
   position: absolute;
   transition: 0.6s;
+>>>>>>> solve
 }
 
 .like-btn:hover {
@@ -446,6 +629,34 @@ figure.snip1171 a:before {
 }
 
 .filter {
+<<<<<<< HEAD
+	margin-left: 30px;
+	padding-top: 15px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.filter .form-control {
+	margin: 10px;
+	border: 3px solid var(--color);
+	width: 30%;
+}
+
+.filter .form-control option {
+	background-color: var(--color);
+	color: #fff;
+	translate: 0.6s;
+}
+
+.carousel-inner {
+	background-color: black;
+}
+
+.carousel-product .carousel-inner {
+	box-shadow: 6px 5px 3px var(--color);
+	border-radius: 50%;
+	background-color: #fff;
+=======
   margin-left: 30px;
   padding-top: 15px;
   width: 100%;
@@ -472,6 +683,7 @@ figure.snip1171 a:before {
   box-shadow: 6px 5px 3px var(--color);
   border-radius: 50%;
   background-color: #fff;
+>>>>>>> solve
 }
 
 /*profille*/
@@ -562,6 +774,29 @@ Quantity btn
   margin-top: 20px;
 }
 .qty {
+<<<<<<< HEAD
+	width: 80px;
+	margin-right: 10px;
+	user-select: none;
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	height: 50px;
+	width: 50px;
+}
+.qty_inc_dec .increment,
+.qty_inc_dec .decrement {
+	float: left;
+	text-align: center;
+	width: 30px;
+	cursor: pointer;
+	font-size: 1.2em;
+	line-height: 20px;
+	height: 25px;
+	vertical-align: middle;
+	background-color: #fff;
+	border: 1px solid #ccc;
+=======
   width: 80px;
   margin-right: 10px;
   user-select: none;
@@ -583,6 +818,7 @@ Quantity btn
   vertical-align: middle;
   background-color: #fff;
   border: 1px solid #ccc;
+>>>>>>> solve
 }
 .qty_inc_dec .increment {
   border-bottom: 0;
@@ -595,6 +831,18 @@ Quantity btn
   display: inline-block;
 }
 .qty input[type="text"] {
+<<<<<<< HEAD
+	float: left;
+	font-family: "Open Sans", sans-serif;
+	outline: 0;
+	font-size: 1.2em;
+	text-align: center;
+	height: 50px;
+	width: 30px;
+	line-height: 40px;
+	border: 1px solid #ccc;
+	border-right: 0;
+=======
   float: left;
   font-family: "Open Sans", sans-serif;
   outline: 0;
@@ -605,6 +853,7 @@ Quantity btn
   line-height: 40px;
   border: 1px solid #ccc;
   border-right: 0;
+>>>>>>> solve
 }
 button[type="button"] {
   cursor: pointer;
@@ -623,13 +872,205 @@ button[type="button"]:hover {
 }
 button[type="button"]:active,
 button[type="button"]:focus {
+<<<<<<< HEAD
+	outline: none;
+=======
   outline: none;
+>>>>>>> solve
 }
 .rotate-x {
   animation-duration: 0.6s;
   animation-name: rotate-x;
 }
 @keyframes rotate-x {
+<<<<<<< HEAD
+	from {
+		transform: rotateY(0deg);
+	}
+	to {
+		transform: rotateY(360deg);
+	}
+}
+
+.card-about {
+	box-shadow: 0 4px 8px 0 var(--color);
+	max-width: 300px;
+	margin: auto;
+	text-align: center;
+	font-family: arial;
+}
+
+.card-about img {
+	width: 100%;
+	height: 350px;
+	object-fit: cover;
+}
+.card-about h3 {
+	color: var(--color);
+}
+.card-about .title {
+	color: var(--color);
+	font-size: 18px;
+}
+
+.card-about button {
+	border: none;
+	outline: 0;
+	display: inline-block;
+	padding: 8px;
+	color: white;
+	background-color: var(--color);
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+}
+
+.card-about a {
+	text-decoration: none;
+	font-size: 22px;
+	color: var(--color);
+}
+
+.card-about button:hover,
+a:hover {
+	opacity: 0.7;
+}
+
+.aboutUs-container {
+	display: flex;
+}
+
+.carousel-home h3 {
+	color: var(--color);
+	font-size: 45px;
+}
+
+.carousel-home p {
+	color: var(--color);
+	font-size: 25px;
+}
+
+.navbar-light .navbar-toggler {
+	color: var(--color);
+}
+.subscribe {
+	display: block;
+	margin: 0;
+	width: 50%;
+}
+
+.subscribe input[type="text"] {
+	border-radius: 5px;
+	border: none;
+	width: 100%;
+}
+
+.subscribe input[type="submit"] {
+	border-radius: 5px;
+	border: none;
+	width: 100%;
+	margin-top: 10px;
+	cursor: pointer;
+	color: var(--color);
+	background-color: #ffffff;
+	transition: 0.6s;
+}
+
+.subscribe input[type="submit"]:hover {
+	color: #ffffff;
+	background-color: var(--color);
+	border: 1px solid #fff;
+}
+
+.contact-us {
+	display: flex;
+}
+
+.contact-us p {
+	margin-left: 5px;
+}
+
+.contact-us svg {
+	font-size: 25px;
+}
+
+.billing-address {
+	display: block;
+	margin: auto;
+}
+/*checkout */
+/*
+.your-cart {
+	padding: 10px 40px;
+}
+
+.inputs {
+	width: 100%;
+}
+
+.submitcard {
+	margin: 0;
+}
+
+.submitcard .input-group {
+	align-items: center;
+}
+
+.billing {
+	width: 100%;
+}
+.name {
+	display: flex;
+}
+
+.name .first input {
+	width: 90%;
+	margin-right: 20px;
+	border: 2px solid var(--color);
+}
+.name .last input {
+	width: 90%;
+	border: 2px solid var(--color);
+} */
+
+.profile,
+.span,
+.containerCheckout {
+	color: var(--color);
+}
+
+.profile button,
+.checkout-btn,
+#pay-btn {
+	background-color: var(--color);
+	color: #fff;
+	border: none;
+	transition: 0.6s;
+}
+
+.profile button:hover,
+.checkout-btn:hover,
+#pay-btn:hover {
+	border: 1px solid var(--color);
+	color: var(--color);
+	background-color: #fff;
+}
+
+.ibox-content span {
+	color: var(--color);
+}
+.ibox-content .table-responsive {
+	color: var(--color);
+}
+
+.del-add{
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+
+}
+=======
   from {
     transform: rotateY(0deg);
   }
@@ -804,3 +1245,4 @@ a:hover {
 .ibox-content .table-responsive {
   color: var(--color);
 }
+>>>>>>> solve

@@ -34,6 +34,12 @@ class Header extends React.Component {
 										<NavLink exact className="nav-link item" to="/profile">
 											<FaShoppingCart />
 										</NavLink>
+<<<<<<< HEAD
+										<NavLink exact className="nav-link item" to="/fav">
+											Favorite
+										</NavLink>
+=======
+>>>>>>> solve
 										<NavDropdown title="Prodocuts" id="collasible-nav-dropdown">
 											<NavDropdown.Item>
 												<NavLink
