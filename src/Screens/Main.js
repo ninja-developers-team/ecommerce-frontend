@@ -94,10 +94,8 @@ export class Main extends Component {
 								style={{ objectFit: "cover" }}
 							/>
 							<Carousel.Caption>
-								<h3>First slide label</h3>
-								<p>
-									Nulla vitae elit libero, a pharetra augue mollis interdum.
-								</p>
+								<h3>Welcom to Our Store</h3>
+								<p>if you are boring! Go Shopping ...</p>
 							</Carousel.Caption>
 						</Carousel.Item>
 						<Carousel.Item>
@@ -109,10 +107,8 @@ export class Main extends Component {
 								style={{ objectFit: "cover" }}
 							/>
 							<Carousel.Caption>
-								<h3>First slide label</h3>
-								<p>
-									Nulla vitae elit libero, a pharetra augue mollis interdum.
-								</p>
+								<h3>Welcom to Our Store</h3>
+								<p>buy now or cry later</p>
 							</Carousel.Caption>
 						</Carousel.Item>
 						<Carousel.Item>
@@ -124,7 +120,7 @@ export class Main extends Component {
 								style={{ objectFit: "cover" }}
 							/>
 							<Carousel.Caption>
-								<h3>First slide label</h3>
+								<h3>Welcom to Our Store</h3>
 								<p>
 									Nulla vitae elit libero, a pharetra augue mollis interdum.
 								</p>
