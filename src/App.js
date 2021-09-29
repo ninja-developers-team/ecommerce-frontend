@@ -15,6 +15,7 @@ import Electronics from "./Screens/Showproduct/Electronics";
 import "./style.css";
 import AboutUs from "./Screens/AboutUs";
 import Checkout from "./Screens/Checkout";
+import FavList from "./Screens/Component/FavList";
 class App extends React.Component {
     render() {
         return (
@@ -29,7 +30,7 @@ class App extends React.Component {
                             <Profile />
                         </Route>
                         <Route exact path="/game">
-                            <MainGames />
+                            <FavList />
                         </Route>
                         <Route exact path="/clothing1">
                             <WomenClothing />

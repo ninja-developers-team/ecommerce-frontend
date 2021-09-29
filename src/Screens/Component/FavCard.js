@@ -1,6 +1,22 @@
-import React, { Component } from "react";
-import { AiFillDelete } from "react-icons/ai";
-export class ShopingCard extends Component {
+import React, { Component } from 'react'
+import axios from "axios";
+let REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+export class FavCard extends Component {
+    addToCardHandler = async (user) => {
+        const reqBody = {
+            userEmail: user.email,
+            imagePath: this.props.item.imagePath,
+            title: this.props.item.title,
+            description: this.props.item.description,
+            price: this.props.item.price,
+            quantity: 1,
+        };
+        const productData = await axios.post(
+            `${REACT_APP_BACKEND_URL}/addtocard`,
+            reqBody
+        );
+        console.log(productData, "done");
+    };
     render() {
         return (
             <>
@@ -35,17 +51,16 @@ export class ShopingCard extends Component {
 
                                         <div className="m-t-sm">
                                             |
-                                            <a href="#" className="text-muted"
+                                            <a className="text-muted"
                                                 onClick={() => {
-                                                    this.props.delFromCard(this.props.item._id);
+                                                    this.props.del(this.props.item);
                                                 }}>
                                                 <i className="fa fa-trash"></i> Remove item</a>
                                         </div>
                                     </td>
 
                                     <td>
-                                        {this.props.item.price}
-                                        <s className="small text-muted"></s>
+                                        <i className="fa fa fa-shopping-cart" onClick={() => this.addToCardHandler(this.props.user)}></i> Add to Cart
                                     </td>
                                     <td width="65">
                                         <input type="text" className="form-control" placeholder={this.props.item.quantity} />
@@ -60,35 +75,10 @@ export class ShopingCard extends Component {
                         </table>
                     </div>
 
-                </div>{/*<div class="item">
-                    <div class="buttons">
-                        <span
-                            class="delete-btn"
-                            onClick={() => {
-                                this.props.delFromCard(this.props.item._id);
-                            }}
-                        ></span>
-                    </div>
-                    <div class="image">
-                        <img
-                            src={this.props.item.imagePath}
-                            alt=""
-                            style={{ height: "70px" }} />
-                    </div>
-                    <div class="description">
-                        <span>{this.props.item.title}</span>
-                    </div>
-                    <div class="total-price">{this.props.item.price}</div>
-                    <div class="total-price">{this.props.item.quantity}</div>
-                    <div class="buttons">
-                        <AiFillDelete
-                            onClick={() => {
-                                this.props.delFromCard(this.props.item._id);
-                            }}
-                            style={{ cursor: "pointer" }} />
-                    </div>
-                </div>*/}</>
-        );
+                </div>
+            </>
+        )
     }
 }
-export default ShopingCard;
+
+export default FavCard
