@@ -6,6 +6,7 @@ import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import { Container, Nav, NavDropdown } from "react-bootstrap";
 import { AiFillHome } from "react-icons/ai";
+import { FaShoppingCart } from "react-icons/fa";
 class Header extends React.Component {
 	render() {
 		return (
@@ -31,7 +32,7 @@ class Header extends React.Component {
 											<AiFillHome />
 										</NavLink>
 										<NavLink exact className="nav-link item" to="/profile">
-											Profile
+											<FaShoppingCart />
 										</NavLink>
 										<NavDropdown title="Prodocuts" id="collasible-nav-dropdown">
 											<NavDropdown.Item>

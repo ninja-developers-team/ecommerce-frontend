@@ -75,7 +75,10 @@ export class GameSingleProduct extends Component {
 								</div>
 							</div>
 						</div>
-						<a onClick={() => this.props.addFavouriteGame(reqBody)}>
+						<a
+							class="button-game"
+							onClick={() => this.props.addFavouriteGame(reqBody)}
+						>
 							Add to Cart
 						</a>
 					</figcaption>
