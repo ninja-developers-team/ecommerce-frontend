@@ -79,7 +79,7 @@ class Jewelery extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form class="filter">
           <select
             class="form-control"
             onChange={this.selectType}
@@ -95,7 +95,7 @@ class Jewelery extends Component {
             onChange={this.selectOption}
             placeholder="Filter Your Item"
           >
-            <option value="all">Filter Your Item On Categories </option>
+            <option value="all">Filter Your Item On The Metal</option>
             <option value="diamond">Diamond</option>
             <option value="gold">Gold</option>
             <option value="Pearl ">Pearl</option>

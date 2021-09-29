@@ -12,7 +12,6 @@ class ElectronicsCard extends Component {
       Q: 1,
     };
   }
-
   incrementQty = () => {
     this.setState({
       Q: this.state.Q + 1,
@@ -66,26 +65,19 @@ class ElectronicsCard extends Component {
       <>
         <Col lg={3} md={4} sm={6} xs={12}>
           <figure class="snip1171">
-            <img
-              src={this.props.electronicsItem.image}
-              alt="sample71"
-              //   onClick={this.handleModel}
-            />
+            <img src={this.props.electronicsItem.image} alt="sample71" />
             <div class="price">{this.props.electronicsItem.price}</div>
+            <div class="buttons col">
+              <span
+                className={
+                  this.state.isActive ? "like-btn  is-active" : "like-btn"
+                }
+                onClick={handleToggle}
+              ></span>
+            </div>
             <figcaption>
-              <h6>{this.props.electronicsItem.title}</h6>
-              <p>
-                {this.props.electronicsItem.description}
-
-                <div class="buttons col">
-                  <span
-                    className={
-                      this.state.isActive ? "like-btn  is-active" : "like-btn"
-                    }
-                    onClick={handleToggle}
-                  ></span>
-                </div>
-              </p>
+              <h6>{this.props.electronicsItem.title.replace(/[0-9]/g, "")}</h6>
+              <p>{this.props.electronicsItem.description}</p>
               <div class="qty-block">
                 <div class="qty">
                   <input
@@ -106,9 +98,7 @@ class ElectronicsCard extends Component {
                   </div>
                 </div>
               </div>
-              <a href="#" onClick={(e) => this.addToCardHandler(user)}>
-                Add to Cart
-              </a>
+              <a onClick={(e) => this.addToCardHandler(user)}>Add to Cart</a>
             </figcaption>
           </figure>
         </Col>

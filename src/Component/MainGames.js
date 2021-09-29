@@ -20,6 +20,8 @@ export class MainGames extends Component {
         console.log(this.state.gameApiData1.data, "from did amunt");
         this.setState({
           gameApiData1: res.data.data.game,
+          gameApiData2: res.data.data.game,
+
           showGameData: true,
         });
         console.log(this.state.gameApiData1.data, "from did amunt");
@@ -30,18 +32,10 @@ export class MainGames extends Component {
     );
   };
 
-	addFavouriteGame = async (object) => {
-		const postRequest = await axios.post(
-			`${this.state.url}/addtocard`,
-			object
-		);
-		console.log(object, postRequest);
-		// this.setState({
-		// 	messege: postRequest.data,
-		// 	showApiMessege: true,
-		// });
-	};
-
+  addFavouriteGame = async (object) => {
+    const postRequest = await axios.post(`${this.state.url}/addtocard`, object);
+    console.log(object, postRequest);
+  };
 
   selectedValue = (e) => {
     let value = Number(e.target.value);
@@ -59,39 +53,64 @@ export class MainGames extends Component {
       gameApiData1: gameApiData1,
     });
   };
-
-	render() {
-		return (
-			<>
-				<form>
-					{/* <label for="selectBox">Sort by price</label> */}
-					<select
-						class="form-control"
-						id="selectBox"
-						onClick={this.selectedValue}
-						placeholder="Filter Your Item"
-					>
-						<option value="">Filter Your Item </option>
-						<option value="1">from lowest to highest price</option>
-						<option value="2">From the highest price to the lowest</option>
-					</select>
-				</form>
-				<Row>
-					{this.state.showApiMessege && <h3>{this.state.messege}</h3>}
-					{this.state.showGameData && (
-						<GameApiData
-							gameApiData={this.state.gameApiData1}
-							addFavouriteGame={this.addFavouriteGame}
-							incrementQty={this.incrementQty}
-							Q={this.state.Q}
-							decrementQty={this.decrementQty}
-						/>
-					)}
-				</Row>
-			</>
-		);
-	}
-
+  selectType = (event) => {
+    let type = event.target.value.toLowerCase();
+    console.log(type);
+    if (type) {
+      let filterdData = this.state.gameApiData2.filter((card) => {
+        return card.title.toLowerCase().includes(type);
+      });
+      this.setState({
+        gameApiData1: filterdData,
+      });
+      console.log(this.state.gameApiData1);
+    }
+    if (type === "all") {
+      this.setState({
+        gameApiData1: this.state.gameApiData2,
+      });
+    }
+  };
+  render() {
+    return (
+      <>
+        <form class="filter">
+          <select
+            class="form-control"
+            onChange={this.selectType}
+            placeholder="Filter Your Item"
+          >
+            <option value="all">Filter Your Item On Categories </option>
+            <option value="RIDER">RIDER</option>
+            <option value="TOY ">TOY &amp; EARRING</option>
+            <option value="MINI ">MINI Toy</option>
+          </select>
+          <select
+            class="form-control"
+            id="selectBox"
+            onClick={this.selectedValue}
+            placeholder="Filter Your Item"
+          >
+            <option value="">Filter Your Item </option>
+            <option value="1">from lowest to highest price</option>
+            <option value="2">From the highest price to the lowest</option>
+          </select>
+        </form>
+        <Row>
+          {this.state.showApiMessege && <h3>{this.state.messege}</h3>}
+          {this.state.showGameData && (
+            <GameApiData
+              gameApiData={this.state.gameApiData1}
+              addFavouriteGame={this.addFavouriteGame}
+              incrementQty={this.incrementQty}
+              Q={this.state.Q}
+              decrementQty={this.decrementQty}
+            />
+          )}
+        </Row>
+      </>
+    );
+  }
 }
 
 export default MainGames;
