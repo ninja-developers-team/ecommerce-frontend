@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-
 import { Card, Button, Col } from "react-bootstrap";
 import { withAuth0 } from "@auth0/auth0-react";
-import axios from "axios";
-let REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-class WomanCard extends Component {
+
+export class GameSingleProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,47 +24,27 @@ class WomanCard extends Component {
           Q: 0,
         });
   };
-  addToCardHandler = async (user) => {
-    const reqBody = {
-      userEmail: user.email,
-      imagePath: this.props.womanItem.image,
-      title: this.props.womanItem.title,
-      description: this.props.womanItem.description,
-      price: this.props.womanItem.price,
-      quantity: this.state.Q, ///from input
-    };
-    const productData = await axios.post(
-      `${REACT_APP_BACKEND_URL}/addtocard`,
-      reqBody
-    );
-    console.log(productData, "done");
-  };
   render() {
-    const { user } = this.props.auth0;
     const handleToggle = async () => {
       this.setState({ isActive: !this.state.isActive });
+    };
+    let obj = this.props.obj;
+    const { user } = this.props.auth0;
 
-      ///////////////// add to fav
-
-      const reqBody = {
-        userEmail: user.email,
-        imagePath: this.props.womanItem.image,
-        title: this.props.womanItem.title,
-        description: this.props.womanItem.description,
-        price: this.props.womanItem.price,
-      };
-      const Data = await axios.post(
-        `${REACT_APP_BACKEND_URL}/addtofav`,
-        reqBody
-      );
-      console.log(Data.data, "done");
+    const reqBody = {
+      userEmail: user.email,
+      imagePath: obj.image,
+      title: obj.title,
+      description: obj.description,
+      price: obj.price,
+      quantity: this.state.Q, ///from input
     };
     return (
-      <Col lg={3} md={4} sm={6} xs={12}>
+      <Col lg={3} md={6} sm={6} xs={12}>
         <figure class="snip1171">
-          <img src={this.props.womanItem.image} alt="sample71" />
-          <div class="price"> {this.props.womanItem.price}</div>
-          <div class="">
+          <img src={obj.image} alt="sample71" />
+          <div class="price"> {obj.price}</div>
+          <div class="buttons col">
             <span
               className={
                 this.state.isActive ? "like-btn  is-active" : "like-btn"
@@ -75,8 +53,8 @@ class WomanCard extends Component {
             ></span>
           </div>
           <figcaption>
-            <h6>{this.props.womanItem.title.replace(/[0-9]/g, "")}</h6>
-            <p> {this.props.womanItem.description}</p>
+            <h6>{obj.title.replace(/[0-9]/g, "")}</h6>
+            <p>{obj.description}</p>
             <div class="qty-block">
               <div class="qty">
                 <input
@@ -97,11 +75,17 @@ class WomanCard extends Component {
                 </div>
               </div>
             </div>
-            <a onClick={(e) => this.addToCardHandler(user)}>Add to Cart</a>
+            <a
+              class="button-game"
+              onClick={() => this.props.addFavouriteGame(reqBody)}
+            >
+              Add to Cart
+            </a>
           </figcaption>
         </figure>
       </Col>
     );
   }
 }
-export default withAuth0(WomanCard);
+
+export default withAuth0(GameSingleProduct);

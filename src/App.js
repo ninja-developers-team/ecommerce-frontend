@@ -10,9 +10,11 @@ import Profile from "./Screens/Profile";
 import Jewelery from "./Screens/Showproduct/Jewelery";
 import WomenClothing from "./Screens/Showproduct/WomenClothing";
 import MenClothing from "./Screens/Showproduct/MenClothing";
-import Games from "./Screens/Games";
+import MainGames from "./Component/MainGames";
 import Electronics from "./Screens/Showproduct/Electronics";
-
+import "./style.css";
+import AboutUs from "./Screens/AboutUs";
+import Checkout from "./Screens/Checkout";
 class App extends React.Component {
   render() {
     return (
@@ -26,8 +28,8 @@ class App extends React.Component {
             <Route exact path="/profile">
               <Profile />
             </Route>
-            <Route exact path="/games">
-              <Games />
+            <Route exact path="/game">
+              <MainGames />
             </Route>
             <Route exact path="/clothing1">
               <WomenClothing />
@@ -41,6 +43,12 @@ class App extends React.Component {
             <Route exact path="/clothing2">
               <MenClothing />
             </Route>
+            <Route exact path="/about">
+              <AboutUs />
+            </Route>
+            <Route exact path="/Checkout">
+              <Checkout />
+            </Route>
           </Switch>
           <Footer />
         </Router>
@@ -48,5 +56,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default withAuth0(App);
