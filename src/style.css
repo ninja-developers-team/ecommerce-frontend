@@ -3,9 +3,10 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Pacifico&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
 body {
-	overflow-x: hidden;
+  overflow-x: hidden;
 }
 :root {
+<<<<<<< HEAD
 	--color: #79b4b7;
 }
 * {
@@ -44,20 +45,65 @@ body {
 
 .footer h5 {
 	text-align: start;
+=======
+  --color: #79b4b7;
+}
+* {
+  font-family: "Poppins", sans-serif;
+  /*font-family: "Concert One", cursive;*/
+}
+.footer {
+  background-color: var(--color);
+  color: #fff;
+
+  justify-content: space-around;
+
+  align-items: center;
+  padding-bottom: 0;
+  margin-top: 0;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer .first {
+  text-align: start;
+}
+
+.footer .first {
+  border-right: 1px solid #fff;
+}
+
+.footer ul {
+  list-style: none;
+  text-align: start;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.footer h5 {
+  text-align: start;
+>>>>>>> solve
 }
 .footer ul li {
-	margin: 10px;
-	color: #fff;
+  margin: 10px;
+  color: #fff;
 }
 .footer ul li .icon {
-	font-size: 20px;
-	color: #fff;
+  font-size: 20px;
+  color: #fff;
+}
+
+.footer-copyright {
+  border-top: 1px solid #fff;
 }
 
 .footer-copyright {
 	border-top: 1px solid #fff;
 }
 .main {
+<<<<<<< HEAD
 	background-color: #fff;
 	height: 100vh;
 	display: flex;
@@ -107,12 +153,64 @@ body {
 	border-radius: 5px;
 	font-weight: bold;
 	transition: 0.6s;
+=======
+  background-color: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  background-image: url("https://gravyanalytics.com/wp-content/uploads/2018/06/Mall-Lovers-and-Frequent-Shoppers-1200x900.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.main h1 {
+  color: #fff;
+  text-shadow: 10px 5px 5px var(--color);
+}
+.main .card {
+  margin: auto;
+  min-width: 50%;
+  border: none;
+  padding: 20px;
+  margin: 20px;
+  opacity: 0.78;
+  background-color: var(--color);
+  color: #ffffff;
+}
+.main .card .card-body {
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+  border: 3px solid var(--color);
+  box-shadow: 10px 10px 10px #fff;
+  border-radius: 10px 0;
+  margin-top: 20px;
+}
+.main .card .card-body p {
+  color: #fff;
+}
+.main .card .card-body h2 {
+  color: #fff;
+}
+.main .card .card-body button {
+  color: var(--color);
+  border: 1px solid #fff;
+  padding: 15px 32px;
+  background-color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.6s;
+>>>>>>> solve
 }
 .main .card .card-body button:hover {
-	background-color: var(--color);
-	color: #fff;
+  background-color: var(--color);
+  color: #fff;
 }
 .homeNav {
+<<<<<<< HEAD
 	background-color: #fff;
 	display: flex;
 	justify-content: space-between;
@@ -128,247 +226,295 @@ body {
 
 	font-weight: bold;
 	transition: 0.6s;
+=======
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  color: var(--color);
+  border-bottom: 3px solid var(--color);
+}
+.homeNav button {
+  color: var(--color);
+  border: none;
+  padding: 10px 15px;
+  background-color: #fff;
+
+  font-weight: bold;
+  transition: 0.6s;
+>>>>>>> solve
 }
 .homeNav button:hover {
-	background-color: var(--color);
-	color: #fff;
-	border: 2px solid #fff;
+  background-color: var(--color);
+  color: #fff;
+  border: 2px solid #fff;
 }
 .homeNav h1 {
+<<<<<<< HEAD
 	color: var(--color);
 	font-family: "Lobster Two", cursive;
+=======
+  color: var(--color);
+  font-family: "Lobster Two", cursive;
+>>>>>>> solve
 }
 /* .homeNav a {
 	color: var(--color);
 } */
 .homeCard {
-	height: 100vh;
-	background-color: #fff;
-	align-items: center;
-	padding: 15px;
+  height: 100vh;
+  background-color: #fff;
+  align-items: center;
+  padding: 15px;
 }
 .carousel-fade .carousel-item {
-	background-color: #fff;
+  background-color: #fff;
 }
 .carousel-fade .carousel-item img {
-	transition: 0.5s;
+  transition: 0.5s;
 }
 .carousel-fade .carousel-item img:hover {
-	transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.carousel-indicators {
+  opacity: 0;
 }
 
 .carousel-indicators {
 	opacity: 0;
 }
 .navHead {
-	background-color: var(--color);
+  background-color: var(--color);
 }
 .navbar-expand-lg .navbar-nav {
-	align-items: center;
+  align-items: center;
 }
 .navbar-expand-lg .navbar-nav .item {
+<<<<<<< HEAD
 	color: var(--color);
 	transition: 0.5s ease-in-out;
 	margin: 10px;
+=======
+  color: var(--color);
+  transition: 0.5s ease-in-out;
+  margin: 10px;
+>>>>>>> solve
 }
 .inneritem {
-	border-bottom: 1px solid var(--color);
+  border-bottom: 1px solid var(--color);
 }
 .navbar-expand-lg .navbar-nav .item:hover {
+<<<<<<< HEAD
 	opacity: 0.5;
 	color: var(--color);
 	transform: scale(1.3);
 	font-weight: bold;
+=======
+  opacity: 0.5;
+  color: var(--color);
+  transform: scale(1.3);
+  font-weight: bold;
+>>>>>>> solve
 }
 .profileCOntainer {
-	height: 100vh;
-	align-items: center;
+  height: 100vh;
+  align-items: center;
 }
 /* style part game */
 .nav-game {
-	display: flex;
-	flex-wrap: wrap;
-	padding-left: 0;
-	margin-bottom: 0;
-	list-style: none;
-	justify-content: flex-end;
-	background-color: var(--color);
-	padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  justify-content: flex-end;
+  background-color: var(--color);
+  padding: 15px;
 }
 .nav-game a {
-	padding: 15px;
-	text-decoration: none;
-	text-transform: capitalize;
-	color: #fff;
-	transition: 0.6s;
-	margin-right: 10px;
+  padding: 15px;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #fff;
+  transition: 0.6s;
+  margin-right: 10px;
 }
 .nav-game a:hover {
-	border-bottom: 3px solid #fff;
-	transform: scale(1.2);
+  border-bottom: 3px solid #fff;
+  transform: scale(1.2);
 }
 
 .nav-game a.active {
+<<<<<<< HEAD
 	border-bottom: 3px solid #fff;
 	transform: scale(1.2);
+=======
+  border-bottom: 3px solid #fff;
+  transform: scale(1.2);
+>>>>>>> solve
 }
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
 figure.snip1171 {
-	font-family: "Raleway", Arial, sans-serif;
-	position: relative;
-	overflow: hidden;
-	margin: 10px;
-	min-width: 220px;
-	max-width: 310px;
-	width: 100%;
-	background: var(--color);
-	color: #333;
-	text-align: left;
-	box-shadow: 0 0 5px var(--color);
-	transition: 0.6s ease-in-out;
+  font-family: "Raleway", Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  width: 100%;
+  background: var(--color);
+  color: #333;
+  text-align: left;
+  box-shadow: 0 0 5px var(--color);
+  transition: 0.6s ease-in-out;
 }
 figure.snip1171:hover {
-	transform: scale(0.9);
+  transform: scale(0.9);
 }
 figure.snip1171 * {
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	-webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-	transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+  transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 }
 figure.snip1171 img {
-	/* max-width: 100%; */
-	width: 300px;
-	height: 300px;
-	object-fit: cover;
-	vertical-align: top;
+  /* max-width: 100%; */
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  vertical-align: top;
 }
 figure.snip1171 figcaption {
-	position: relative;
-	background-color: #ffffff;
-	padding: 20px 25px 50px;
-	height: 150px;
+  position: relative;
+  background-color: #ffffff;
+  padding: 20px 25px 50px;
+  height: 150px;
 }
 figure.snip1171 h6 {
-	position: absolute;
-	bottom: 100%;
-	text-transform: uppercase;
-	padding: 0px 25px;
-	line-height: 44px;
-	margin: 0;
-	left: 0;
-	font-weight: 400;
-	background-color: var(--color);
-	color: #ffffff;
+  position: absolute;
+  bottom: 100%;
+  text-transform: uppercase;
+  padding: 0px 25px;
+  line-height: 44px;
+  margin: 0;
+  left: 0;
+  font-weight: 400;
+  background-color: var(--color);
+  color: #ffffff;
 }
 figure.snip1171 h6 span {
-	font-weight: 800;
+  font-weight: 800;
 }
 figure.snip1171 h6:before {
-	position: absolute;
-	left: 100%;
-	border-style: solid;
-	border-width: 44px 0 0 12px;
-	border-color: transparent transparent transparent var(--color);
-	content: "";
-	top: 0;
+  position: absolute;
+  left: 100%;
+  border-style: solid;
+  border-width: 44px 0 0 12px;
+  border-color: transparent transparent transparent var(--color);
+  content: "";
+  top: 0;
 }
 figure.snip1171 p {
-	font-size: 0.8em;
-	font-weight: 500;
-	text-align: left;
-	margin: 0;
-	line-height: 1.6em;
+  font-size: 0.8em;
+  font-weight: 500;
+  text-align: left;
+  margin: 0;
+  line-height: 1.6em;
 }
 figure.snip1171 .price {
-	position: absolute;
-	top: 0;
-	right: 0;
-	color: #ffffff;
-	background-color: var(--color);
-	padding: 0 10px;
-	line-height: 40px;
-	font-weight: 800;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #ffffff;
+  background-color: var(--color);
+  padding: 0 10px;
+  line-height: 40px;
+  font-weight: 800;
 }
 figure.snip1171 .price:before {
-	position: absolute;
-	right: 100%;
-	border-style: solid;
-	border-width: 0 12px 40px 0;
-	border-color: transparent var(--color) transparent;
-	content: "";
-	top: 0;
+  position: absolute;
+  right: 100%;
+  border-style: solid;
+  border-width: 0 12px 40px 0;
+  border-color: transparent var(--color) transparent;
+  content: "";
+  top: 0;
 }
 figure.snip1171 a {
-	text-decoration: none;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	background-color: var(--color);
-	line-height: 40px;
-	padding: 0 10px;
-	color: #ffffff;
-	font-weight: 800;
-	font-size: 0.9em;
-	text-transform: uppercase;
+  text-decoration: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--color);
+  line-height: 40px;
+  padding: 0 10px;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.9em;
+  text-transform: uppercase;
 }
 figure.snip1171 a:before {
-	position: absolute;
-	right: 100%;
-	border-style: solid;
-	border-width: 0 0 40px 12px;
-	border-color: transparent transparent var(--color);
-	content: "";
-	top: 0;
+  position: absolute;
+  right: 100%;
+  border-style: solid;
+  border-width: 0 0 40px 12px;
+  border-color: transparent transparent var(--color);
+  content: "";
+  top: 0;
+}
+.button-game {
+  color: #fff;
 }
 .button-game {
 	color: #fff;
 }
 /*scroll bar*/
 ::-webkit-scrollbar {
-	width: 10px;
+  width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 5px grey;
-	border-radius: 10px;
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: var(--color);
-	border-radius: 5px;
+  background: var(--color);
+  border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--color);
+  background: var(--color);
 }
 
 /*edit size cards*/
 .col-lg-4 {
-	flex: 0 0 auto;
-	width: 30%;
+  flex: 0 0 auto;
+  width: 30%;
 }
 
 .row {
-	justify-content: center;
-	padding: 30px;
+  justify-content: center;
+  padding: 30px;
 }
 .col-lg-3 {
-	flex: 0 0 auto;
+  flex: 0 0 auto;
 
-	text-align: center;
-	display: flex;
-	justify-content: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar-light .navbar-nav .show > .nav-link,
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
+<<<<<<< HEAD
 	/* color: rgba(0,0,0,.9); */
 	color: var(--color);
 }
@@ -392,36 +538,62 @@ figure.snip1171 a:before {
 .title-carousel {
 	color: var(--color);
 	font-weight: bold;
+=======
+  /* color: rgba(0,0,0,.9); */
+  color: var(--color);
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  transform: scale(1.2);
+  font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link svg {
+  color: var(--color);
+  transition: 0.6s;
+}
+
+.navbar-light .navbar-nav .nav-link svg:hover {
+  transform: scale(1.3);
+  font-weight: bold;
+  color: black;
+}
+
+.title-carousel {
+  color: var(--color);
+  font-weight: bold;
+>>>>>>> solve
 }
 
 .dropdown-menu .dropdown-item .inneritem {
-	color: var(--color);
+  color: var(--color);
 }
 
 .col-lg-4 {
-	flex: 0 0 auto;
-	/* width: 30%; */
-	display: flex;
-	justify-content: center;
+  flex: 0 0 auto;
+  /* width: 30%; */
+  display: flex;
+  justify-content: center;
 }
 
 /* style for cart and fave page*/
 @keyframes animate {
-	0% {
-		background-position: left;
-	}
-	50% {
-		background-position: right;
-	}
-	100% {
-		background-position: right;
-	}
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: right;
+  }
 }
 .like-btn {
-	display: inline-block;
-	cursor: pointer;
+  display: inline-block;
+  cursor: pointer;
 }
 .like-btn {
+<<<<<<< HEAD
 	top: 0;
 	left: 0;
 	background: url(https://designmodo.com/demo/shopping-cart/twitter-heart.png);
@@ -431,21 +603,33 @@ figure.snip1171 a:before {
 	background-repeat: no-repeat;
 	position: absolute;
 	transition: 0.6s;
+=======
+  top: 0;
+  left: 0;
+  background: url(https://designmodo.com/demo/shopping-cart/twitter-heart.png);
+  width: 60px;
+  height: 40px;
+  background-size: 2900%;
+  background-repeat: no-repeat;
+  position: absolute;
+  transition: 0.6s;
+>>>>>>> solve
 }
 
 .like-btn:hover {
-	color: var(--color);
+  color: var(--color);
 }
 
 .is-active {
-	animation-name: animate;
-	animation-duration: 0.8s;
-	animation-iteration-count: 1;
-	animation-timing-function: steps(28);
-	animation-fill-mode: forwards;
+  animation-name: animate;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(28);
+  animation-fill-mode: forwards;
 }
 
 .filter {
+<<<<<<< HEAD
 	margin-left: 30px;
 	padding-top: 15px;
 	width: 100%;
@@ -472,96 +656,125 @@ figure.snip1171 a:before {
 	box-shadow: 6px 5px 3px var(--color);
 	border-radius: 50%;
 	background-color: #fff;
+=======
+  margin-left: 30px;
+  padding-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.filter .form-control {
+  margin: 10px;
+  border: 3px solid var(--color);
+  width: 30%;
+}
+
+.filter .form-control option {
+  background-color: var(--color);
+  color: #fff;
+  translate: 0.6s;
+}
+
+.carousel-inner {
+  background-color: black;
+}
+
+.carousel-product .carousel-inner {
+  box-shadow: 6px 5px 3px var(--color);
+  border-radius: 50%;
+  background-color: #fff;
+>>>>>>> solve
 }
 
 /*profille*/
 .shopping-cart {
-	height: 100%;
-	width: 100%;
-	overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .overflow {
-	overflow: scroll;
-	height: 80%;
-	overflow-x: hidden;
-	border: 6px solid var(--color);
-	padding: 15px;
+  overflow: scroll;
+  height: 80%;
+  overflow-x: hidden;
+  border: 6px solid var(--color);
+  padding: 15px;
 }
 
 .overflow .item {
-	border-bottom: 1px solid var(--color);
-	margin-bottom: 10px;
-	width: 80%;
+  border-bottom: 1px solid var(--color);
+  margin-bottom: 10px;
+  width: 80%;
 }
 .shopping-cart h2 {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .shopping-cart h3 {
-	margin-top: 20px;
-	border-bottom: 3px solid var(--color);
-	width: 85%;
+  margin-top: 20px;
+  border-bottom: 3px solid var(--color);
+  width: 85%;
 }
 
 .col-profile {
-	height: 100%;
-	display: flex;
-	align-items: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .col-profile .container {
-	width: 100%;
-	justify-content: center;
+  width: 100%;
+  justify-content: center;
 }
 
 .col-profile .container .card {
-	border: 1px solid var(--color);
+  border: 1px solid var(--color);
 }
 /* .buttons {
 	position: static;
 } */
 
 .delete-btn {
-	margin: 10px 40px;
-	width: 18px;
-	height: 17px;
-	background: url("https://designmodo.com/demo/shopping-cart/delete-icn.svg")
-		no-repeat center;
+  margin: 10px 40px;
+  width: 18px;
+  height: 17px;
+  background: url("https://designmodo.com/demo/shopping-cart/delete-icn.svg")
+    no-repeat center;
 }
 
 /*
 Quantity btn
 */
 .cart-button {
-	float: right;
-	margin: 12px 15px 0 0;
+  float: right;
+  margin: 12px 15px 0 0;
 }
 .cart-button img {
-	width: 30px;
-	height: 30px;
-	margin: 0 auto;
-	display: block;
-	color: #888;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  display: block;
+  color: #888;
 }
 .cart-button .cart-qty {
-	background: #ff5252;
-	border-radius: 50%;
-	color: #fff;
-	display: block;
-	font-size: 0.8em;
-	line-height: 17px;
-	position: absolute;
-	text-align: center;
-	top: 11px;
-	right: 10px;
-	height: 17px;
-	width: 17px;
+  background: #ff5252;
+  border-radius: 50%;
+  color: #fff;
+  display: block;
+  font-size: 0.8em;
+  line-height: 17px;
+  position: absolute;
+  text-align: center;
+  top: 11px;
+  right: 10px;
+  height: 17px;
+  width: 17px;
 }
 .qty-block {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 .qty {
+<<<<<<< HEAD
 	width: 80px;
 	margin-right: 10px;
 	user-select: none;
@@ -583,18 +796,42 @@ Quantity btn
 	vertical-align: middle;
 	background-color: #fff;
 	border: 1px solid #ccc;
+=======
+  width: 80px;
+  margin-right: 10px;
+  user-select: none;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  height: 50px;
+  width: 50px;
+}
+.qty_inc_dec .increment,
+.qty_inc_dec .decrement {
+  float: left;
+  text-align: center;
+  width: 30px;
+  cursor: pointer;
+  font-size: 1.2em;
+  line-height: 20px;
+  height: 25px;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #ccc;
+>>>>>>> solve
 }
 .qty_inc_dec .increment {
-	border-bottom: 0;
-	line-height: 25px;
+  border-bottom: 0;
+  line-height: 25px;
 }
 .qty_inc_dec {
-	float: left;
-	width: 10px;
-	height: 50px;
-	display: inline-block;
+  float: left;
+  width: 10px;
+  height: 50px;
+  display: inline-block;
 }
 .qty input[type="text"] {
+<<<<<<< HEAD
 	float: left;
 	font-family: "Open Sans", sans-serif;
 	outline: 0;
@@ -605,31 +842,48 @@ Quantity btn
 	line-height: 40px;
 	border: 1px solid #ccc;
 	border-right: 0;
+=======
+  float: left;
+  font-family: "Open Sans", sans-serif;
+  outline: 0;
+  font-size: 1.2em;
+  text-align: center;
+  height: 50px;
+  width: 30px;
+  line-height: 40px;
+  border: 1px solid #ccc;
+  border-right: 0;
+>>>>>>> solve
 }
 button[type="button"] {
-	cursor: pointer;
-	width: 168px;
-	border: none;
-	background: #fff;
-	height: 50px;
-	font-size: 1.2em;
-	font-family: "Open Sans", sans-serif;
-	transition: all 0.2s;
-	border: 1px solid #ccc;
-	box-shadow: 0 1px 2px #fff;
+  cursor: pointer;
+  width: 168px;
+  border: none;
+  background: #fff;
+  height: 50px;
+  font-size: 1.2em;
+  font-family: "Open Sans", sans-serif;
+  transition: all 0.2s;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 2px #fff;
 }
 button[type="button"]:hover {
-	box-shadow: 0 1px 2px #cbc3ba;
+  box-shadow: 0 1px 2px #cbc3ba;
 }
 button[type="button"]:active,
 button[type="button"]:focus {
+<<<<<<< HEAD
 	outline: none;
+=======
+  outline: none;
+>>>>>>> solve
 }
 .rotate-x {
-	animation-duration: 0.6s;
-	animation-name: rotate-x;
+  animation-duration: 0.6s;
+  animation-name: rotate-x;
 }
 @keyframes rotate-x {
+<<<<<<< HEAD
 	from {
 		transform: rotateY(0deg);
 	}
@@ -816,3 +1070,179 @@ a:hover {
 	cursor: pointer;
 
 }
+=======
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.card-about {
+  box-shadow: 0 4px 8px 0 var(--color);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.card-about img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+.card-about h3 {
+  color: var(--color);
+}
+.card-about .title {
+  color: var(--color);
+  font-size: 18px;
+}
+
+.card-about button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: var(--color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card-about a {
+  text-decoration: none;
+  font-size: 22px;
+  color: var(--color);
+}
+
+.card-about button:hover,
+a:hover {
+  opacity: 0.7;
+}
+
+.aboutUs-container {
+  display: flex;
+}
+
+.carousel-home h3 {
+  color: var(--color);
+  font-size: 45px;
+}
+
+.carousel-home p {
+  color: var(--color);
+  font-size: 25px;
+}
+
+.navbar-light .navbar-toggler {
+  color: var(--color);
+}
+.subscribe {
+  display: block;
+  margin: 0;
+  width: 50%;
+}
+
+.subscribe input[type="text"] {
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+}
+
+.subscribe input[type="submit"] {
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  color: var(--color);
+  background-color: #ffffff;
+  transition: 0.6s;
+}
+
+.subscribe input[type="submit"]:hover {
+  color: #ffffff;
+  background-color: var(--color);
+  border: 1px solid #fff;
+}
+
+.contact-us {
+  display: flex;
+}
+
+.contact-us p {
+  margin-left: 5px;
+}
+
+.contact-us svg {
+  font-size: 25px;
+}
+
+.billing-address {
+  display: block;
+  margin: auto;
+}
+/*checkout */
+/* 
+.your-cart {
+	padding: 10px 40px;
+}
+.inputs {
+	width: 100%;
+}
+.submitcard {
+	margin: 0;
+}
+.submitcard .input-group {
+	align-items: center;
+}
+.billing {
+	width: 100%;
+}
+.name {
+	display: flex;
+}
+.name .first input {
+	width: 90%;
+	margin-right: 20px;
+	border: 2px solid var(--color);
+}
+.name .last input {
+	width: 90%;
+	border: 2px solid var(--color);
+} */
+
+.profile,
+.span,
+.containerCheckout {
+  color: var(--color);
+}
+
+.profile button,
+.checkout-btn,
+#pay-btn {
+  background-color: var(--color);
+  color: #fff;
+  border: none;
+  transition: 0.6s;
+}
+
+.profile button:hover,
+.checkout-btn:hover,
+#pay-btn:hover {
+  border: 1px solid var(--color);
+  color: var(--color);
+  background-color: #fff;
+}
+
+.ibox-content span {
+  color: var(--color);
+}
+.ibox-content .table-responsive {
+  color: var(--color);
+}
+>>>>>>> solve

@@ -3,6 +3,7 @@ import { AiFillDelete } from "react-icons/ai";
 export class ShopingCard extends Component {
     render() {
         return (
+<<<<<<< HEAD
             <>
                 <div className="ibox-content">
                     <div className="table-responsive">
@@ -12,10 +13,21 @@ export class ShopingCard extends Component {
                                     <td width="90">
                                         <div className="cart-product-imitation">
 
+=======
+            <><div className="ibox-content">
+                <div className="table-responsive">
+                    <table className="table shoping-cart-table">
+                        <tbody>
+                            <tr>
+                                <td width="90">
+                                    <div className="cart-product-imitation">
+                                        
+>>>>>>> solve
                                             <img
                                                 src={this.props.item.imagePath}
                                                 alt=""
                                                 style={{ height: "70px" }} />
+<<<<<<< HEAD
 
                                         </div>
                                     </td>
@@ -56,6 +68,53 @@ export class ShopingCard extends Component {
                     </div>
 
                 </div>{/*<div class="item">
+=======
+                                    
+                                    </div>
+                                </td>
+                                <td className="desc">
+                                    <h3>
+                                        <a href="#" className="text-navy">
+                                            {this.props.item.title}
+                                        </a>
+                                    </h3>
+                                    <p className="small">
+                                       
+                                    </p>
+                                    <dl className="small m-b-none">
+                                        <dt>Description </dt>
+                                        <dd> {this.props.item.description}.</dd>
+                                    </dl>
+
+                                    <div className="m-t-sm">
+                                        |
+                                        <a href="#" className="text-muted"
+                                            onClick={() => {
+                                                this.props.delFromCard(this.props.item._id);
+                                            }}>
+                                            <i className="fa fa-trash"></i> Remove item</a>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    {this.props.item.price}
+                                    <s className="small text-muted"></s>
+                                </td>
+                                <td width="65">
+                                    <input type="text" className="form-control" placeholder={this.props.item.quantity} />
+                                </td>
+                                <td>
+                                    <h4>
+                                        {this.props.item.price}
+                                    </h4>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>{/*<div class="item">
+>>>>>>> solve
                     <div class="buttons">
                         <span
                             class="delete-btn"

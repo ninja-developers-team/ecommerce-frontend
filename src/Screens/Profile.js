@@ -13,7 +13,40 @@ export class Profile extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+<<<<<<< HEAD
 			cardList: [],
+=======
+			cardList: [
+				{
+					title: "LapTop Lenove",
+					quantity: 3,
+					description: "asdasd",
+					imagePath: "https://www.bootstrapcdn.com/assets/img/bannerImage.png",
+					price: 280,
+				},
+				{
+					title: "LapTop Lenove",
+					quantity: 3,
+					description: "asdasd",
+					imagePath: "https://www.bootstrapcdn.com/assets/img/bannerImage.png",
+					price: 280,
+				},
+				{
+					title: "LapTop Lenove",
+					quantity: 3,
+					description: "asdasd",
+					imagePath: "https://www.bootstrapcdn.com/assets/img/bannerImage.png",
+					price: 280,
+				},
+				{
+					title: "LapTop Lenove",
+					quantity: 3,
+					description: "asdasd",
+					imagePath: "https://www.bootstrapcdn.com/assets/img/bannerImage.png",
+					price: 280,
+				},
+			],
+>>>>>>> solve
 			favList: [],
 		};
 	}
