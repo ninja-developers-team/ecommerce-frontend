@@ -29,8 +29,11 @@ class App extends React.Component {
                         <Route exact path="/profile">
                             <Profile />
                         </Route>
-                        <Route exact path="/game">
+                        <Route exact path="/fav">
                             <FavList />
+                        </Route>
+                        <Route exact path="/game">
+                            <MainGames />
                         </Route>
                         <Route exact path="/clothing1">
                             <WomenClothing />

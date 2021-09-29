@@ -12,7 +12,7 @@ export class FavList extends Component {
       favList: [],
     };
   }
-  del = (item) => {
+  del = async (item) => {
     const { user } = this.props.auth0;
     const reqBody = {
       userEmail: user.email,

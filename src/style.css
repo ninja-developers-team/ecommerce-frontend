@@ -746,7 +746,7 @@ a:hover {
 	margin: auto;
 }
 /*checkout */
-/* 
+/*
 .your-cart {
 	padding: 10px 40px;
 }
@@ -808,4 +808,11 @@ a:hover {
 }
 .ibox-content .table-responsive {
 	color: var(--color);
+}
+
+.del-add{
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+
 }

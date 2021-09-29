@@ -42,11 +42,6 @@ export class ShopingCard extends Component {
                                                 <i className="fa fa-trash"></i> Remove item</a>
                                         </div>
                                     </td>
-
-                                    <td>
-                                        {this.props.item.price}
-                                        <s className="small text-muted"></s>
-                                    </td>
                                     <td width="65">
                                         <input type="text" className="form-control" placeholder={this.props.item.quantity} />
                                     </td>

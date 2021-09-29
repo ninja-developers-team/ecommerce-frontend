@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
+import { withAuth0 } from '@auth0/auth0-react';
+
 let REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 export class FavCard extends Component {
     addToCardHandler = async (user) => {
@@ -49,21 +51,19 @@ export class FavCard extends Component {
                                             <dd> {this.props.item.description}.</dd>
                                         </dl>
 
-                                        <div className="m-t-sm">
+
+                                        <div href="#" className="m-t-sm">
                                             |
                                             <a className="text-muted"
                                                 onClick={() => {
                                                     this.props.del(this.props.item);
                                                 }}>
-                                                <i className="fa fa-trash"></i> Remove item</a>
+                                                <i className="fa fa-trash del-add"></i> Remove</a>
                                         </div>
                                     </td>
 
                                     <td>
-                                        <i className="fa fa fa-shopping-cart" onClick={() => this.addToCardHandler(this.props.user)}></i> Add to Cart
-                                    </td>
-                                    <td width="65">
-                                        <input type="text" className="form-control" placeholder={this.props.item.quantity} />
+                                        <i className="fa fa fa-shopping-cart del-add" onClick={() => this.addToCardHandler(this.props.user)}></i> Add to Cart
                                     </td>
                                     <td>
                                         <h4>
@@ -81,4 +81,4 @@ export class FavCard extends Component {
     }
 }
 
-export default FavCard
+export default withAuth0(FavCard)
