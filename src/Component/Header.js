@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, NavItem, Image } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import { withAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./LoginButton";
@@ -34,12 +34,10 @@ class Header extends React.Component {
 										<NavLink exact className="nav-link item" to="/profile">
 											<FaShoppingCart />
 										</NavLink>
-<<<<<<< HEAD
 										<NavLink exact className="nav-link item" to="/fav">
 											Favorite
 										</NavLink>
-=======
->>>>>>> solve
+
 										<NavDropdown title="Prodocuts" id="collasible-nav-dropdown">
 											<NavDropdown.Item>
 												<NavLink

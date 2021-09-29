@@ -76,7 +76,7 @@ class Jewelery extends Component {
 		}
 	};
 
-<<<<<<< HEAD
+
 	render() {
 		return (
 			<div>
@@ -96,7 +96,7 @@ class Jewelery extends Component {
 						onChange={this.selectOption}
 						placeholder="Filter Your Item"
 					>
-						<option value="all">Filter Your Item On Categories </option>
+						<option value="all">Filter Your Item On The Metal</option>
 						<option value="diamond">Diamond</option>
 						<option value="gold">Gold</option>
 						<option value="Pearl ">Pearl</option>
@@ -121,51 +121,5 @@ class Jewelery extends Component {
 			</div>
 		);
 	}
-=======
-  render() {
-    return (
-      <div>
-        <form class="filter">
-          <select
-            class="form-control"
-            onChange={this.selectType}
-            placeholder="Filter Your Item"
-          >
-            <option value="all">Filter Your Item On Categories </option>
-            <option value="NECKLACE">Necklace</option>
-            <option value="RINGS">Rings &amp; EARRING</option>
-            <option value="BRACELET">Bracelet</option>
-          </select>
-          <select
-            class="form-control"
-            onChange={this.selectOption}
-            placeholder="Filter Your Item"
-          >
-            <option value="all">Filter Your Item On The Metal</option>
-            <option value="diamond">Diamond</option>
-            <option value="gold">Gold</option>
-            <option value="Pearl ">Pearl</option>
-          </select>
-          {/* <label for="selectBox">Sort by price</label> */}
-          <select
-            class="form-control"
-            id="selectBox"
-            onClick={this.selectedValue}
-            placeholder="Filter Your Item"
-          >
-            <option value="">Filter Your Item </option>
-            <option value="1">from lowest to highest price</option>
-            <option value="2">From the highest price to the lowest</option>
-          </select>
-        </form>
-        <Row xs={1} md={3} className="g-4">
-          {this.state.jeweleryList.map((jewelweyItem) => (
-            <JeweleryCard jewelweyItem={jewelweyItem} />
-          ))}
-        </Row>
-      </div>
-    );
-  }
->>>>>>> solve
 }
 export default Jewelery;

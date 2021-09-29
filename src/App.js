@@ -15,7 +15,6 @@ import Electronics from "./Screens/Showproduct/Electronics";
 import "./style.css";
 import AboutUs from "./Screens/AboutUs";
 import Checkout from "./Screens/Checkout";
-<<<<<<< HEAD
 import FavList from "./Screens/Component/FavList";
 class App extends React.Component {
     render() {
@@ -61,47 +60,6 @@ class App extends React.Component {
             </>
         );
     }
-=======
-class App extends React.Component {
-  render() {
-    return (
-      <>
-        <Router>
-          <Header />
-          <Switch>
-            <Route exact path="/">
-              {this.props.auth0.isAuthenticated ? <Main /> : <Login />}
-            </Route>
-            <Route exact path="/profile">
-              <Profile />
-            </Route>
-            <Route exact path="/game">
-              <MainGames />
-            </Route>
-            <Route exact path="/clothing1">
-              <WomenClothing />
-            </Route>
-            <Route exact path="/jewelery">
-              <Jewelery />
-            </Route>
-            <Route exact path="/electronics">
-              <Electronics />
-            </Route>
-            <Route exact path="/clothing2">
-              <MenClothing />
-            </Route>
-            <Route exact path="/about">
-              <AboutUs />
-            </Route>
-            <Route exact path="/Checkout">
-              <Checkout />
-            </Route>
-          </Switch>
-          <Footer />
-        </Router>
-      </>
-    );
-  }
->>>>>>> solve
+
 }
 export default withAuth0(App);
