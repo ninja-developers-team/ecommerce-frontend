@@ -14,7 +14,7 @@ import MainGames from "./Component/MainGames";
 import Electronics from "./Screens/Showproduct/Electronics";
 import "./style.css";
 import AboutUs from "./Screens/AboutUs";
-import Checkout from "./Screens/Component/Checkout"
+import Checkout from "./Screens/Checkout";
 class App extends React.Component {
     render() {
         return (
