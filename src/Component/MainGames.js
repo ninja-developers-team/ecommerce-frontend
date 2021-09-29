@@ -112,5 +112,4 @@ export class MainGames extends Component {
     );
   }
 }
-
 export default MainGames;
