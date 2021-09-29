@@ -46,7 +46,7 @@ export class MainGames extends Component {
       } else if (value === 1) {
         return Number(a.price) - Number(b.price);
       } else {
-        return this.state.womanCollection;
+        return this.state.gameApiData1;
       }
     });
     this.setState({
