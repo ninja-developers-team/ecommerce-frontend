@@ -16,3 +16,5 @@ Team member:
 + as a user i want to delete some product form my cart .
 + as user i want to see categories of  products with description and the price 
 + as a user i want to rate the product .
+
+[website](https://festive-pike-9462e6.netlify.app/)
